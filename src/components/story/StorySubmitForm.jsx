@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, Lightbulb, Heart, Loader2, CheckCircle2, AlertCircle, Image, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import BackgroundElements from '@/components/BackgroundElements';
-import { createLocalStory } from '@/lib/localStories';
 import { moderateStoryText } from '@/lib/contentModeration';
+import { createLocalStory } from '@/lib/localStories';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const topics = [
 {
@@ -40,6 +41,9 @@ export default function StorySubmitForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
+  const isMobile = useIsMobile();
+  const galleryInputRef = useRef(null);
+  const cameraInputRef = useRef(null);
 
   const handleTopicSelect = (topic) => {
     setSelectedTopic(topic);
@@ -49,6 +53,7 @@ export default function StorySubmitForm() {
   const handleMediaSelect = (e) => {
     const files = Array.from(e.target.files || []);
     setMediaFiles((prev) => [...prev, ...files]);
+    e.target.value = '';
   };
 
   const removeMedia = (index) => {
@@ -81,42 +86,18 @@ export default function StorySubmitForm() {
 
     setIsSubmitting(true);
     try {
-      const hasMedia = mediaFiles.length > 0;
-
       const payload = {
         ...formData,
         title: formData.title.trim(),
         author_name: 'Anonymous',
         content: formData.content.trim(),
-        media_urls: [],
-        audio_url: null
+        mediaFiles
       };
 
-      let response;
-      if (hasMedia) {
-        const story = await createLocalStory({
-          title: payload.title,
-          author_name: payload.author_name,
-          content: payload.content,
-          topic: payload.topic,
-          mediaFiles
-        });
-        response = { success: true, story };
-      } else {
-        const story = await createLocalStory({
-          title: payload.title,
-          author_name: payload.author_name,
-          content: payload.content,
-          topic: payload.topic
-        });
-        response = { success: true, story };
-      }
-
-      if (!response?.story && response?.success !== true) {
-        throw new Error('Unexpected response from story submission endpoint.');
-      }
+      await createLocalStory(payload);
 
       setIsSuccess(true);
+      setMediaFiles([]);
     } catch (err) {
       const backendError = err?.data?.error || err?.data?.message || err?.message;
       setError(backendError || 'Failed to submit story. Please try again.');
@@ -287,19 +268,52 @@ export default function StorySubmitForm() {
                 <div className="space-y-4 border-t pt-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-900 mb-3">Add Images (Optional)</label>
-                    <label className="block">
-                      <input
+                    <input
+                      ref={galleryInputRef}
                       type="file"
                       accept="image/*"
                       multiple
                       onChange={handleMediaSelect}
-                      className="hidden" />
+                      className="hidden"
+                    />
+                    <input
+                      ref={cameraInputRef}
+                      type="file"
+                      accept="image/*"
+                      capture="environment"
+                      onChange={handleMediaSelect}
+                      className="hidden"
+                    />
 
-                      <div className="border-2 border-dashed border-blue-300 rounded-lg p-4 text-center cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition">
+                    {isMobile ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        <button
+                          type="button"
+                          onClick={() => galleryInputRef.current?.click()}
+                          className="border-2 border-dashed border-blue-300 rounded-lg p-4 text-center cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition"
+                        >
+                          <Image className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                          <p className="text-sm text-gray-600">Choose from photo gallery</p>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => cameraInputRef.current?.click()}
+                          className="border-2 border-dashed border-blue-300 rounded-lg p-4 text-center cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition"
+                        >
+                          <Image className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                          <p className="text-sm text-gray-600">Take a photo</p>
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => galleryInputRef.current?.click()}
+                        className="w-full border-2 border-dashed border-blue-300 rounded-lg p-4 text-center cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition"
+                      >
                         <Image className="w-6 h-6 text-blue-600 mx-auto mb-2" />
                         <p className="text-sm text-gray-600">Click to add images</p>
-                      </div>
-                    </label>
+                      </button>
+                    )}
                     {mediaFiles.length > 0 &&
                   <div className="flex flex-wrap gap-2 mt-3">
                         {mediaFiles.map((file, idx) =>
