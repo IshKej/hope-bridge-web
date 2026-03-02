@@ -412,7 +412,7 @@ export default function GetInvolved() {
                 </Button>
               </Link>
               <Link to={createPageUrl('Donate')}>
-                <Button variant="outline" className="border-2 border-white/40 !text-white hover:!text-white hover:bg-white/10 rounded-full px-8 py-6 text-base font-semibold transition-all duration-300">
+                <Button className="bg-white hover:bg-gray-50 !text-blue-700 font-bold rounded-full px-8 py-6 text-base shadow-xl hover:shadow-2xl transition-all duration-300">
                   Donate Now
                 </Button>
               </Link>
