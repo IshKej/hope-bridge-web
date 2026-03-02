@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
 import { Button } from '@/components/ui/button';
-import { base44 } from '@/api/client';
 import { Camera, Loader2, CheckCircle2, AlertCircle, Upload, Pen } from 'lucide-react';
 import StoryFilters from '@/components/story/StoryFilters';
 import StoryCard from '@/components/story/StoryCard';
@@ -33,15 +32,8 @@ export default function StoryProject() {
     const loadStories = async () => {
       const localStories = listLocalStories();
 
-      const [supabaseStories, base44Stories] = await Promise.all([
-        listSupabaseStories(),
-        base44.entities.Story.filter({ status: 'approved' }, '-created_date').catch((error) => {
-          console.error('Failed to load Base44 stories:', error);
-          return [];
-        })
-      ]);
-
-      const remoteStories = [...supabaseStories, ...base44Stories];
+      const supabaseStories = await listSupabaseStories();
+      const remoteStories = supabaseStories;
       const allStories = mergeStories(remoteStories, localStories);
       setStories(allStories);
       setFilteredStories(allStories);
@@ -52,11 +44,8 @@ export default function StoryProject() {
 
   const reloadStories = async () => {
     const localStories = listLocalStories();
-    const [supabaseStories, base44Stories] = await Promise.all([
-      listSupabaseStories(),
-      base44.entities.Story.filter({ status: 'approved' }, '-created_date').catch(() => [])
-    ]);
-    const allStories = mergeStories([...supabaseStories, ...base44Stories], localStories);
+    const supabaseStories = await listSupabaseStories();
+    const allStories = mergeStories(supabaseStories, localStories);
     setStories(allStories);
     setFilteredStories(allStories);
   };
@@ -147,31 +136,16 @@ export default function StoryProject() {
         setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, likes: newLikes } : s));
         setFilteredStories((prev) => prev.map((s) => s.id === storyId ? { ...s, likes: newLikes } : s));
         
-        // Persist like update
         updateLocalStoryLikes(storyId, newLikes);
         await updateSupabaseStoryLikes(storyId, newLikes);
-        try {
-          await base44.entities.Story.update(storyId, { likes: newLikes });
-        } catch (error) {
-          console.error('Failed to update backend like:', error);
-        }
       } else {
         // Like
         const newLikes = story.likes + 1;
         setLikedStories((prev) => [...prev, storyId]);
-        
-        // Update local state immediately
         setStories((prev) => prev.map((s) => s.id === storyId ? { ...s, likes: newLikes } : s));
         setFilteredStories((prev) => prev.map((s) => s.id === storyId ? { ...s, likes: newLikes } : s));
-        
-        // Persist like update
         updateLocalStoryLikes(storyId, newLikes);
         await updateSupabaseStoryLikes(storyId, newLikes);
-        try {
-          await base44.entities.Story.update(storyId, { likes: newLikes });
-        } catch (error) {
-          console.error('Failed to update backend like:', error);
-        }
       }
     } catch (error) {
       console.error('Failed to update like:', error);
