@@ -5,16 +5,16 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Heart, Users, Calendar, BookOpen, Loader2, CheckCircle2, AlertCircle, Sparkles } from 'lucide-react';
+import { Heart, Users, Calendar, BookOpen, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import PageBackground from '../components/PageBackground';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgolbkbp';
 
 const roles = [
-  { icon: Users,    label: 'Peer Mentor',         desc: 'Support fellow teens through 1-on-1 conversations and group sessions',      accent: 'from-blue-500 to-indigo-500',   ring: 'border-blue-400',   bg: 'bg-blue-50' },
-  { icon: Calendar, label: 'Event Helper',         desc: 'Help plan and run workshops, community events, and outreach activities',     accent: 'from-cyan-500 to-blue-500',     ring: 'border-cyan-400',   bg: 'bg-cyan-50' },
-  { icon: BookOpen, label: 'Workshop Facilitator', desc: 'Lead or co-lead workshops on stress, identity, and wellness topics',         accent: 'from-indigo-500 to-purple-500', ring: 'border-indigo-400', bg: 'bg-indigo-50' },
-  { icon: Heart,    label: 'Content & Outreach',   desc: 'Help with social media, writing, design, or community outreach',             accent: 'from-pink-500 to-rose-500',     ring: 'border-pink-400',   bg: 'bg-pink-50' },
+  { icon: Users,    label: 'Peer Mentor',         desc: 'Support fellow teens through 1-on-1 conversations and group sessions',      accent: 'from-blue-600 to-blue-500', ring: 'border-blue-400', bg: 'bg-blue-50' },
+  { icon: Calendar, label: 'Event Helper',         desc: 'Help plan and run workshops, community events, and outreach activities',     accent: 'from-blue-600 to-blue-500', ring: 'border-blue-400', bg: 'bg-blue-50' },
+  { icon: BookOpen, label: 'Workshop Facilitator', desc: 'Lead or co-lead workshops on stress, identity, and wellness topics',         accent: 'from-blue-600 to-blue-500', ring: 'border-blue-400', bg: 'bg-blue-50' },
+  { icon: Heart,    label: 'Content & Outreach',   desc: 'Help with social media, writing, design, or community outreach',             accent: 'from-blue-600 to-blue-500', ring: 'border-blue-400', bg: 'bg-blue-50' },
 ];
 
 export default function Volunteer() {
@@ -82,17 +82,13 @@ export default function Volunteer() {
       <section className="pt-16 pb-14 px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }}>
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-sm font-semibold mb-6">
-              <Sparkles className="w-4 h-4" />
-              Volunteer with us
-            </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 leading-tight mb-4">
               Make a real{' '}
               <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">difference</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Join a team of passionate students working to break the stigma around mental health in
-              Asian American communities. No experience needed — just empathy and commitment.
+              Asian American communities. No experience needed, just empathy and commitment.
             </p>
           </motion.div>
         </div>

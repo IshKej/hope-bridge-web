@@ -60,7 +60,7 @@ export default function GetInvolved() {
           </h2>
           <p className="mt-6 text-lg text-slate-600">
             Whether you're a teen seeking support, a parent wanting to help, or 
-            an organization ready to make a difference—you belong in this community.
+            an organization ready to make a difference, you belong in this community.
           </p>
         </motion.div>
 

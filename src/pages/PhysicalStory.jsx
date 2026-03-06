@@ -304,7 +304,7 @@ export default function PhysicalStory() {
             <Zap className="w-10 h-10 sm:w-12 sm:h-12 text-black mx-auto mb-4" />
             <h3 className="text-2xl sm:text-3xl font-bold text-black mb-4">Why Share Your Physical Story?</h3>
             <p className="text-black/90 text-base sm:text-lg leading-relaxed font-medium">
-              Physical stories carry authenticity. When you write by hand, your voice becomes real. Our community values the genuine human connection in your words — the crossed-out passages, the emotional underlines, the real ink on real paper. By sharing your physical story, you're not just adding text to a wall; you're creating a bridge between hearts.
+              Physical stories carry authenticity. When you write by hand, your voice becomes real. Our community values the genuine human connection in your words, the crossed-out passages, the emotional underlines, the real ink on real paper. By sharing your physical story, you're not just adding text to a wall; you're creating a bridge between hearts.
             </p>
           </motion.div>
         </div>

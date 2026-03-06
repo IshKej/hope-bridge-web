@@ -28,7 +28,7 @@ const crisisLines = [
     name: 'Crisis Text Line',
     action: 'Text HOME to 741741',
     href: 'sms:741741?body=HOME',
-    description: 'Text with a trained counselor — no phone call needed. Great for teens.',
+    description: 'Text with a trained counselor, no phone call needed. Great for teens.',
     tag: '24/7 • Text-based • Free',
     color: 'border-blue-200 bg-blue-50',
     iconColor: 'text-blue-500',
@@ -126,7 +126,7 @@ const onlineResources = [
   {
     name: 'NAMI Teen & Young Adult Resources',
     url: 'https://www.nami.org/Your-Journey/Kids-Teens-and-Young-Adults/Teens',
-    description: 'National Alliance on Mental Illness resources specifically for teens — guides, stories, and how to find help.',
+    description: 'National Alliance on Mental Illness resources specifically for teens, guides, stories, and how to find help.',
     format: 'Resource Hub',
     icon: Users,
   },
@@ -143,13 +143,13 @@ const audienceTabs = ["I'm a Teen", "I'm a Parent", "I'm an Educator"];
 
 const audienceContent = {
   "I'm a Teen": {
-    heading: "You deserve support — and you're brave for looking.",
+    heading: "You deserve support, and you're brave for looking.",
     body: "It can feel really hard to ask for help, especially when you're worried about what your family might think. But reaching out is a sign of strength, not weakness. HopeBridge is building a community where Asian teens can connect, share, and find support from people who truly get it.",
     resources: [
-      "One-on-one peer mentoring — anonymous and free",
+      "One-on-one peer mentoring, anonymous and free",
       "Connect with a peer mentor who shares your cultural background",
       "Access our story library to know you're not alone",
-      "Use any crisis line above anytime — no one needs to know",
+      "Use any crisis line above anytime, no one needs to know",
     ],
     cta: 'Explore Our Programs',
     ctaLink: 'Programs',
@@ -157,7 +157,7 @@ const audienceContent = {
   },
   "I'm a Parent": {
     heading: "Supporting your teen starts with understanding.",
-    body: "Asian families often don't talk openly about mental health — and that's not your fault. It's a cultural pattern we can gently change together. Learning to open these conversations without judgment can transform your relationship with your teen.",
+    body: "Asian families often don't talk openly about mental health, and that's not your fault. It's a cultural pattern we can gently change together. Learning to open these conversations without judgment can transform your relationship with your teen.",
     resources: [
       "Attend our parent education workshops (coming spring 2026)",
       "Download our guide: 'Starting the Mental Health Conversation'",
@@ -218,7 +218,7 @@ export default function GetSupport() {
             </h1>
             <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
               Whether you're in crisis right now, looking for ongoing support, or
-              trying to help someone you care about — this page is your starting point.
+              trying to help someone you care about, this page is your starting point.
             </p>
           </motion.div>
         </div>
@@ -229,7 +229,7 @@ export default function GetSupport() {
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
             <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
-            <h2 className="text-lg font-bold text-red-900">If you're in crisis right now — reach out immediately</h2>
+            <h2 className="text-lg font-bold text-red-900">If you're in crisis right now, reach out immediately</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {crisisLines.map((line, i) => (
@@ -384,7 +384,7 @@ export default function GetSupport() {
               Online &amp; Self-Help Resources
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
-              Tools, apps, and communities you can access anytime — no appointment needed.
+              Tools, apps, and communities you can access anytime, no appointment needed.
             </p>
           </motion.div>
 
@@ -437,7 +437,7 @@ export default function GetSupport() {
             </h2>
             <p className="text-white/80 text-lg leading-relaxed mb-10">
               HopeBridge is built by Asian teens, for Asian teens.
-              Join us for a free, anonymous session — no commitment required.
+              Join us for a free, anonymous session, no commitment required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to={createPageUrl('Contact')}>

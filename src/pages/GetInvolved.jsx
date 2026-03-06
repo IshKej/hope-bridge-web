@@ -89,7 +89,7 @@ const shareMessages = [
   },
   {
     platform: 'Text a friend',
-    text: "\"There's this nonprofit called HopeBridge doing really important work for Asian teen mental health — thought you'd want to know.\"",
+    text: "\"There's this nonprofit called HopeBridge doing really important work for Asian teen mental health, thought you'd want to know.\"",
     gradient: 'from-emerald-500 to-teal-500',
   },
 ];
@@ -127,7 +127,7 @@ export default function GetInvolved() {
               <span className="text-blue-200">lasting change</span>
             </h1>
             <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
-              Whether you have time, resources, or a platform — every contribution
+              Whether you have time, resources, or a platform, every contribution
               helps Asian teens in our community feel seen and supported.
             </p>
           </motion.div>
@@ -331,7 +331,7 @@ export default function GetInvolved() {
                 Partner With Us
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Schools & organizations — let's collaborate
+                Schools & organizations, let's collaborate
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
                 HopeBridge partners with schools, districts, mental health organizations,
@@ -404,7 +404,7 @@ export default function GetInvolved() {
             </h2>
             <p className="text-white/80 text-lg leading-relaxed mb-10">
               One volunteer. One donor. One person sharing our story.
-              That's how movements start — and that's how teens find hope.
+              That's how movements start, and that's how teens find hope.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to={createPageUrl('Volunteer')}>

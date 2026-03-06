@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Heart, Users, GraduationCap, Building, ArrowRight, Check } from 'lucide-react';
 import StripePaymentForm from '@/components/donate/StripePaymentForm';
 import PageBackground from '../components/PageBackground';
-// NOTE: BackgroundElements removed — it was causing severe lag (animated blobs with blur-[80-90px])
+// NOTE: BackgroundElements removed, it was causing severe lag (animated blobs with blur-[80-90px])
 
 const impacts = [
   { icon: Heart,         amount: '$5',  description: 'Provides mental health resources and materials for one student',            gradient: 'from-rose-500 to-pink-500',   bg: 'bg-rose-50',   border: 'border-rose-200' },
@@ -55,10 +55,6 @@ export default function DonatePage() {
       <section className="pt-16 pb-20 px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: 'easeOut' }}>
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-sm font-semibold mb-6">
-              <Heart className="w-4 h-4" />
-              Make a Difference
-            </span>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 leading-tight mb-6">
               Support the next generation's{' '}
               <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">

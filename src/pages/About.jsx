@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import PageBackground from '../components/PageBackground';
 
-// kept for backward compat — replaced by PageBackground
+// kept for backward compat, replaced by PageBackground
 function PageBg() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
@@ -88,10 +88,6 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-sm font-semibold mb-6">
-              <Heart className="w-4 h-4" />
-              Our Story
-            </span>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 leading-tight">
               About{' '}
               <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
@@ -99,7 +95,7 @@ export default function About() {
               </span>
             </h1>
             <p className="mt-6 text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              Mental health support built by Asian teens, for Asian teens — because we've lived it.
+              Mental health support built by Asian teens, for Asian teens, because we've lived it.
             </p>
           </motion.div>
         </div>
@@ -115,22 +111,26 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <div className="gradient-border p-10 shadow-xl">
+            <div className="bg-white rounded-3xl p-10 shadow-lg border border-blue-100">
               <h2 className="text-3xl font-bold text-blue-600 mb-6">Our Story</h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p className="text-lg">
-                  Too many Asian American teens are struggling — and most of them aren&apos;t talking about it.
-                  Not because they don&apos;t want to. Because no one around them really gets it.
+                  Hope Bridge started with something simple: conversations.
                 </p>
                 <p className="text-lg">
-                  The pressure to perform, the weight of family expectations, and the feeling that your stress
-                  isn&apos;t valid enough to mention can make it even harder to speak up.
+                  As Asian American teens, we noticed that many of us were dealing with the same things but rarely talking about them. The pressure to do well in school. The feeling of balancing two cultures. The gap that can sometimes exist between what teens are experiencing and what families understand.
+                </p>
+                <p className="text-lg">
+                  These pressures often come from good intentions. Many parents want stability and opportunity for their children, especially if they sacrificed a lot to get here. At the same time, teens are trying to figure out who they are, what success means to them, and how to handle the stress that can come with it.
+                </p>
+                <p className="text-lg">
+                  That&apos;s why we founded Hope Bridge to open new experiences and conversations!
+                </p>
+                <p className="text-lg">
+                  We want to create spaces where Asian American teens feel comfortable sharing their stories, reflecting on identity, and thinking about success in healthier ways. At the same time, we hope to encourage more understanding between teens and families so that these conversations do not have to feel so difficult!
                 </p>
                 <p className="text-base text-gray-500">
-                  Six teens from Sammamish decided to do something about it. We started HopeBridge out of
-                  Eastlake High School because we&apos;ve lived this. Our programs are free, culturally aware,
-                  and built by people who actually understand what you&apos;re going through. Mental wellness
-                  shouldn&apos;t be a privilege — we&apos;re here to make sure it isn&apos;t.
+                  Hope Bridge is still growing, but the purpose is simple: no teen should feel alone in the pressures they face. Join us for this journey!
                 </p>
               </div>
             </div>
@@ -176,7 +176,7 @@ function TeamMemberCard({ member, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.07 }}
-      className="group glass-card glow-hover rounded-2xl p-6 text-center border border-blue-100/60 hover:border-blue-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col items-center"
+      className="group bg-white rounded-2xl p-6 text-center border border-blue-100 hover:border-blue-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col items-center"
     >
       {showImage ? (
         <img

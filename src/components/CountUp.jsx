@@ -27,7 +27,7 @@ function fmt(n, originalNum) {
 }
 
 /**
- * CountUp — animates a numeric stat from 0 to its target when it enters the viewport.
+ * CountUp, animates a numeric stat from 0 to its target when it enters the viewport.
  *
  * Usage:
  *   <CountUp value="5,000+" className="text-5xl font-black text-blue-600" />
@@ -35,9 +35,9 @@ function fmt(n, originalNum) {
  *   <CountUp value="100%"   className="text-3xl font-black text-blue-600" />
  *
  * Props:
- *   value      — original string like "5,000+", "$25", "100%", "5K+", "2 hrs"
- *   className  — CSS classes for the span
- *   duration   — animation duration in ms (default 1600)
+ *   value     , original string like "5,000+", "$25", "100%", "5K+", "2 hrs"
+ *   className , CSS classes for the span
+ *   duration  , animation duration in ms (default 1600)
  */
 export default function CountUp({ value, className = '', duration = 1600 }) {
   const ref = useRef(null);

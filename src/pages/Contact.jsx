@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Mail, MapPin, Phone, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
-// NOTE: BackgroundElements removed — it was causing severe lag (animated blobs with blur-[80-90px])
+// NOTE: BackgroundElements removed, it was causing severe lag (animated blobs with blur-[80-90px])
 
 const MAX_MESSAGE_LENGTH = 1000;
 const MAX_NAME_LENGTH = 100;
@@ -159,17 +159,13 @@ export default function Contact() {
       <section className="pt-16 pb-16 px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: 'easeOut' }}>
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-sm font-semibold mb-6">
-              <Mail className="w-4 h-4" />
-              We'd love to hear from you
-            </span>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 leading-tight mb-6">
               Let's{' '}
               <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">connect</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
               Whether you're seeking support, want to partner with us, or have questions about
-              our programs — we'd love to hear from you.
+              our programs, we'd love to hear from you.
             </p>
           </motion.div>
         </div>

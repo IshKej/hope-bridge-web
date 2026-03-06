@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { GraduationCap, Users, BookOpen, Heart, CheckCircle, Send, ArrowRight } from 'lucide-react';
+import { Users, BookOpen, Heart, CheckCircle, Send, ArrowRight } from 'lucide-react';
 
 const benefits = [
   "Culturally responsive mental health programming",
@@ -85,7 +85,7 @@ export default function Schools() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          _subject: `School Partnership Inquiry — ${formData.schoolName}`,
+          _subject: `School Partnership Inquiry, ${formData.schoolName}`,
           ...formData
         })
       });
@@ -121,10 +121,6 @@ export default function Schools() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-medium mb-6">
-              <GraduationCap className="w-4 h-4" />
-              School Partnerships
-            </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-slate-900 leading-tight">
               Bring culturally informed mental health support to{' '}
               <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
@@ -133,7 +129,7 @@ export default function Schools() {
             </h1>
             <p className="mt-6 text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
               Partner with HopeBridge to provide your Asian American students with the culturally
-              responsive mental health support they need to thrive — completely free.
+              responsive mental health support they need to thrive, completely free.
             </p>
             <a
               href="#partnership-form"
@@ -182,8 +178,8 @@ export default function Schools() {
                   making support accessible to Asian American students where they spend their days.
                 </p>
                 <p>
-                  Our programs address the unique pressures these students face—from academic expectations
-                  to identity struggles—in ways traditional counseling often can't.
+                  Our programs address the unique pressures these students face, from academic expectations
+                  to identity struggles, in ways traditional counseling often can't.
                 </p>
                 <p>
                   All programming is completely free for schools and students, removing financial barriers

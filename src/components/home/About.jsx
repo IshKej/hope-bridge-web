@@ -23,7 +23,7 @@ export default function About() {
             <div className="mt-8 space-y-6 text-slate-600 leading-relaxed">
               <p>
                 Hope Bridge was founded by individuals who experienced firsthand the 
-                unique pressures facing Asian American teens—the weight of expectations, 
+                unique pressures facing Asian American teens, the weight of expectations, 
                 the silence around mental health, and the isolation of feeling caught 
                 between cultures.
               </p>
@@ -36,7 +36,7 @@ export default function About() {
               </p>
 
               <p>
-                Our approach isn't about fixing teens—it's about creating spaces where 
+                Our approach isn't about fixing teens, it's about creating spaces where 
                 they can process their experiences, develop resilience, and know they're 
                 not alone. We work alongside families, schools, and communities to build 
                 ecosystems of support.

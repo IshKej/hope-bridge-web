@@ -80,7 +80,7 @@ export default function Hero() {
       {/* Hero content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
 
-        {/* Main heading — shimmer on HopeBridge */}
+        {/* Main heading, shimmer on HopeBridge */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ export default function Hero() {
           </h2>
         </motion.div>
 
-        {/* Description — hidden on mobile to keep hero to 2 lines */}
+        {/* Description, hidden on mobile to keep hero to 2 lines */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

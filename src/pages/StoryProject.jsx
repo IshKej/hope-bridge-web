@@ -224,27 +224,6 @@ export default function StoryProject() {
               A vibrant space where Asian teens share authentic experiences with cultural identity, academic pressures, and family dynamics. Every story matters. Every voice counts.
             </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="mt-12 flex flex-wrap gap-4 sm:gap-10 justify-center text-center">
-              {[
-                { num: '200+', label: 'Stories Shared', color: 'from-blue-600 to-blue-500' },
-                { num: '100%', label: 'Anonymous & Safe', color: 'from-blue-700 to-blue-600' }
-              ].map((stat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.6 + i * 0.1 }}
-                  whileHover={{ scale: 1.1, rotate: 2 }}
-                  className={`px-10 py-6 rounded-3xl bg-gradient-to-br ${stat.color} border-2 border-blue-400 shadow-2xl`}>
-                  <div className="text-5xl font-black text-white">{stat.num}</div>
-                  <div className="text-base text-white/90 mt-2 font-bold">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
           </motion.div>
         </div>
       </section>

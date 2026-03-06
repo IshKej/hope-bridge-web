@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import {
   GraduationCap, Building2, HeartHandshake, Stethoscope,
-  CheckCircle, Send, ArrowRight, Users, Sparkles, HandHeart
+  Send, ArrowRight
 } from 'lucide-react';
 import PageBackground from '../components/PageBackground';
 
@@ -13,50 +13,51 @@ const partnerTypes = [
     title: "Schools",
     description: "Bring culturally informed mental health workshops, student programming, and counselor support directly to your campus.",
     gradient: "from-blue-600 to-blue-500",
-    bg: "bg-blue-50",
-    border: "border-blue-200",
+    bg: "bg-white",
+    border: "border-blue-100",
     tag: "King County",
+    tagColor: "bg-blue-100 text-blue-700"
+  },
+  {
+    icon: Building2,
+    title: "Local Businesses",
+    description: "Partner with us to sponsor events, provide venues, or fund programming that directly supports Asian American teens in your community.",
+    gradient: "from-blue-600 to-blue-500",
+    bg: "bg-white",
+    border: "border-blue-100",
+    tag: "Sponsor",
     tagColor: "bg-blue-100 text-blue-700"
   },
   {
     icon: Building2,
     title: "Nonprofits & Community Orgs",
     description: "Co-create programming, share resources, and multiply our collective impact for Asian American youth across the Eastside.",
-    gradient: "from-indigo-600 to-blue-500",
-    bg: "bg-indigo-50",
-    border: "border-indigo-200",
+    gradient: "from-blue-600 to-blue-500",
+    bg: "bg-white",
+    border: "border-blue-100",
     tag: "Coalition",
-    tagColor: "bg-indigo-100 text-indigo-700"
+    tagColor: "bg-blue-100 text-blue-700"
   },
   {
     icon: Stethoscope,
     title: "Therapists & Mental Health Pros",
     description: "Join our referral network to serve teens who need professional support beyond peer programming.",
-    gradient: "from-sky-600 to-blue-500",
-    bg: "bg-sky-50",
-    border: "border-sky-200",
+    gradient: "from-blue-600 to-blue-500",
+    bg: "bg-white",
+    border: "border-blue-100",
     tag: "Referral Network",
-    tagColor: "bg-sky-100 text-sky-700"
+    tagColor: "bg-blue-100 text-blue-700"
   },
   {
     icon: HeartHandshake,
     title: "Faith & Cultural Organizations",
-    description: "Work together to reach teens within trusted community spaces — temples, churches, cultural centers, and beyond.",
-    gradient: "from-blue-500 to-cyan-500",
-    bg: "bg-cyan-50",
-    border: "border-cyan-200",
+    description: "Work together to reach teens within trusted community spaces like temples, churches, cultural centers, and beyond.",
+    gradient: "from-blue-600 to-blue-500",
+    bg: "bg-white",
+    border: "border-blue-100",
     tag: "Community",
-    tagColor: "bg-cyan-100 text-cyan-700"
+    tagColor: "bg-blue-100 text-blue-700"
   }
-];
-
-const benefits = [
-  "Culturally responsive mental health workshops for students",
-  "Professional development for staff and counselors",
-  "Student wellness programming and drop-in support",
-  "Parent education sessions available in multiple languages",
-  "Crisis response planning and staff consultation",
-  "Ongoing resources, check-ins, and program evaluation"
 ];
 
 const processSteps = [
@@ -150,10 +151,6 @@ export default function Partnerships() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-sm font-semibold mb-6">
-              <HandHeart className="w-4 h-4" />
-              Community Partnerships
-            </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
               Partner with{' '}
               <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
@@ -161,7 +158,7 @@ export default function Partnerships() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
-              Whether you are a school, nonprofit, mental health provider, or community organization —
+              Whether you are a school, nonprofit, mental health provider, or community organization,
               we want to work alongside you to support Asian American teens across King County.
             </p>
             <a
@@ -192,7 +189,7 @@ export default function Partnerships() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {partnerTypes.map((type, index) => (
               <motion.div
                 key={type.title}
@@ -203,15 +200,12 @@ export default function Partnerships() {
                 className={`group relative ${type.bg} rounded-2xl p-6 border ${type.border} hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden`}
               >
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${type.gradient}`} />
-                <div className="flex items-start justify-between mb-5">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${type.gradient} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                    <type.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <span className={`text-xs font-bold px-3 py-1 rounded-full ${type.tagColor}`}>
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-lg font-black text-gray-900">{type.title}</h3>
+                  <span className={`text-xs font-bold px-3 py-1 rounded-full flex-shrink-0 ml-3 ${type.tagColor}`}>
                     {type.tag}
                   </span>
                 </div>
-                <h3 className="text-lg font-black text-gray-900 mb-2">{type.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{type.description}</p>
               </motion.div>
             ))}
@@ -219,61 +213,6 @@ export default function Partnerships() {
         </div>
       </section>
 
-      {/* Benefits + Free */}
-      <section className="py-16 px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl font-black text-gray-900 mb-6">
-                What Your Partnership Includes
-              </h2>
-              <div className="space-y-3">
-                {benefits.map((b) => (
-                  <div key={b} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-600">{b}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100"
-            >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-500 flex items-center justify-center shadow-md mb-5">
-                <Sparkles className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-2xl font-black text-gray-900 mb-4">
-                Always Free for Communities
-              </h3>
-              <div className="space-y-4 text-gray-600 leading-relaxed text-sm">
-                <p>
-                  HopeBridge brings culturally informed mental health programming directly
-                  to partner organizations — at no cost. We believe financial barriers
-                  should never stand between a teen and support.
-                </p>
-                <p>
-                  Our programs address the unique pressures Asian American teens face,
-                  from academic expectations to identity and cultural disconnection,
-                  in ways traditional counseling often cannot.
-                </p>
-                <p>
-                  Serving Sammamish and the greater King County Eastside area,
-                  with a focus on communities in the Lake Washington and Issaquah
-                  school districts.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* How It Works */}
       <section className="py-16 px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-indigo-600 relative overflow-hidden">
@@ -325,9 +264,6 @@ export default function Partnerships() {
             viewport={{ once: true }}
           >
             <div className="text-center mb-10">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 flex items-center justify-center shadow-lg mx-auto mb-5">
-                <Users className="w-7 h-7 text-white" />
-              </div>
               <h2 className="text-3xl font-black text-gray-900 mb-3">
                 Start a Partnership
               </h2>
@@ -343,7 +279,7 @@ export default function Partnerships() {
                 noValidate
                 className="bg-white rounded-2xl border border-slate-100 shadow-sm p-8 space-y-6"
               >
-                <input type="hidden" name="_subject" value={`Partnership Inquiry — ${formData.orgName || 'HopeBridge'}`} />
+                <input type="hidden" name="_subject" value={`Partnership Inquiry, ${formData.orgName || 'HopeBridge'}`} />
                 {/* Contact Info */}
                 <div>
                   <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">Your Information</h3>
@@ -409,6 +345,7 @@ export default function Partnerships() {
                         >
                           <option value="">Select type</option>
                           <option value="school">School / School District</option>
+                          <option value="local_business">Local Business</option>
                           <option value="nonprofit">Nonprofit Organization</option>
                           <option value="mental_health">Mental Health Practice</option>
                           <option value="faith">Faith / Cultural Organization</option>

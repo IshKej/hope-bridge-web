@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import {
   Phone, MessageSquare, Heart, Shield,
-  ArrowRight, ExternalLink, Sparkles, AlertCircle
+  ArrowRight, ExternalLink, AlertCircle
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
@@ -12,7 +12,7 @@ import PageBackground from '../components/PageBackground';
 const crisisResources = [
   {
     name: "988 Suicide & Crisis Lifeline",
-    description: "Call or text 988 anytime — free, confidential, available 24/7.",
+    description: "Call or text 988 anytime, free, confidential, available 24/7.",
     action: "Call or Text 988",
     href: "tel:988",
     color: "bg-red-50 border-red-200",
@@ -100,7 +100,7 @@ const onlineResources = [
   },
   {
     name: "ReachOut",
-    description: "Mental health information, tools, and stories for young people — practical guides on anxiety, stress, and identity.",
+    description: "Mental health information, tools, and stories for young people, practical guides on anxiety, stress, and identity.",
     url: "https://au.reachout.com",
     tag: "Information"
   },
@@ -139,10 +139,6 @@ export default function Resources() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-sm font-semibold mb-6">
-              <Sparkles className="w-4 h-4" />
-              Mental Health Resources
-            </span>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
               Support is{' '}
               <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
@@ -151,7 +147,7 @@ export default function Resources() {
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
               Whether you need immediate help or are looking for long-term support, these
-              resources are here for you — many specifically for Asian American teens.
+              resources are here for you, many specifically for Asian American teens.
             </p>
           </motion.div>
         </div>
@@ -278,7 +274,7 @@ export default function Resources() {
               transition={{ duration: 0.4 }}
             >
               <p className="text-gray-600 mb-8 text-lg">
-                Free online tools, apps, and platforms for mental health support — available whenever you need them.
+                Free online tools, apps, and platforms for mental health support, available whenever you need them.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5">
                 {onlineResources.map((r, i) => (

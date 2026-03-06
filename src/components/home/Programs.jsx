@@ -18,7 +18,7 @@ const programs = [
   {
     icon: BookMarked,
     title: "Resource Hub",
-    description: "Curated resources for teens, parents, and educators—including guides on having mental health conversations across cultural contexts.",
+    description: "Curated resources for teens, parents, and educators, including guides on having mental health conversations across cultural contexts.",
     color: "from-sky-500 via-blue-400 to-cyan-400"
   }
 ];
@@ -41,7 +41,7 @@ export default function Programs() {
             Programs designed with <span className="font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">understanding</span>
           </h2>
           <p className="mt-6 text-lg text-slate-600">
-            Every initiative is built with cultural context in mind—because support 
+            Every initiative is built with cultural context in mind, because support 
             that doesn't understand your world can't truly help.
           </p>
         </motion.div>

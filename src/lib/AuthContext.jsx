@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from 'react';
 
-// Auth stub — base44 removed. This site is fully public and needs no authentication.
+// Auth stub, base44 removed. This site is fully public and needs no authentication.
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
