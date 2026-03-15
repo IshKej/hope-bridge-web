@@ -91,8 +91,8 @@ export default function Partnerships() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
-              Partner with <span className="text-blue-700">HopeBridge</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+              Partner with <span className="text-blue-200">HopeBridge</span>
             </h1>
             <p className="text-xl text-blue-100 leading-relaxed max-w-2xl mx-auto mb-10">
               Whether you are a school, nonprofit, mental health provider, or community organization,

@@ -30,9 +30,6 @@ export default function Problem() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-3 py-1 rounded-full bg-blue-400/30 text-blue-100 font-semibold text-xs tracking-widest uppercase mb-5 border border-blue-300/30">
-              The Challenge
-            </span>
             <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
               A silent struggle{' '}
               <span className="bg-gradient-to-r from-blue-200 to-blue-300 bg-clip-text text-transparent">

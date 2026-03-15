@@ -22,9 +22,6 @@ export default function StorySection() {
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <span className="inline-block px-3 py-1 rounded-full bg-blue-300/30 text-blue-100 font-bold text-xs tracking-widest uppercase mb-5 border border-blue-300/30">
-              The Story Project
-            </span>
             <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
               Your story{' '}
               <span className="bg-gradient-to-r from-blue-100 to-white bg-clip-text text-transparent">matters here</span>

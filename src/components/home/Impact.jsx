@@ -18,9 +18,6 @@ export default function Impact() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mb-16">
-          <span className="inline-block px-3 py-1 rounded-full bg-blue-500/30 text-blue-200 font-bold text-xs tracking-widest uppercase mb-4 border border-blue-400/30">
-            Our Impact
-          </span>
           <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight">
             Real goals,{' '}
             <span className="bg-gradient-to-r from-blue-200 to-blue-100 bg-clip-text text-transparent">real change</span>

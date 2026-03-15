@@ -82,9 +82,6 @@ export default function Contact() {
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
           className="text-center mb-16">
-          <span className="inline-block px-3 py-1 rounded-full bg-blue-500/30 text-blue-200 font-semibold text-xs tracking-widest uppercase mb-4 border border-blue-400/30">
-            Contact Us
-          </span>
           <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight">
             Let's start a{' '}
             <span className="bg-gradient-to-r from-blue-200 to-blue-300 bg-clip-text text-transparent">conversation</span>

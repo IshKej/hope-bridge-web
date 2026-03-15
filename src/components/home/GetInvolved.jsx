@@ -19,9 +19,6 @@ export default function GetInvolved() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mb-16">
-          <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-bold text-xs tracking-widest uppercase mb-4">
-            Get Involved
-          </span>
           <h2 className="text-4xl sm:text-5xl font-black text-blue-900 leading-tight">
             There's a place{' '}
             <span className="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">for you here</span>

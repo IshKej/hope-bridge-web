@@ -18,9 +18,6 @@ export default function CommunitySurvey() {
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <span className="inline-block px-3 py-1 rounded-full bg-blue-700/50 text-blue-200 font-bold text-xs tracking-widest uppercase mb-5 border border-blue-600/30">
-              Community Voice
-            </span>
             <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-5">
               Help shape{' '}
               <span className="bg-gradient-to-r from-blue-300 to-blue-100 bg-clip-text text-transparent">our programs</span>

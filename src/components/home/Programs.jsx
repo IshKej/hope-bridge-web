@@ -53,9 +53,6 @@ export default function Programs() {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6"
         >
           <div>
-            <span className="inline-block px-3 py-1 rounded-full bg-blue-500/30 text-blue-200 font-semibold text-xs tracking-widest uppercase mb-4 border border-blue-400/30">
-              What We Do
-            </span>
             <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight">
               Programs designed{' '}
               <span className="bg-gradient-to-r from-blue-300 to-blue-100 bg-clip-text text-transparent">
@@ -95,7 +92,7 @@ export default function Programs() {
                 <p className="text-blue-200 text-sm leading-relaxed">{program.description}</p>
               </div>
               <div className="md:col-span-2 md:text-right">
-                <span className="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold border border-blue-500/30">
+                <span className="text-blue-400 text-xs font-semibold tracking-wider uppercase">
                   {program.tag}
                 </span>
               </div>
