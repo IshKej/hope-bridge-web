@@ -3,14 +3,12 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import StripePaymentForm from '@/components/donate/StripePaymentForm';
-import PageBackground from '../components/PageBackground';
-// NOTE: BackgroundElements removed, it was causing severe lag (animated blobs with blur-[80-90px])
 
 const impacts = [
-  { amount: '$5',  description: 'Provides mental health resources and materials for one student',            gradient: 'from-rose-500 to-pink-500',   bg: 'bg-rose-50',   border: 'border-rose-200' },
-  { amount: '$10', description: 'Supports a community support session for 10–15 teens',                     gradient: 'from-blue-500 to-indigo-500', bg: 'bg-blue-50',   border: 'border-blue-200' },
-  { amount: '$25', description: 'Funds a cultural awareness workshop at a local school',                     gradient: 'from-indigo-500 to-purple-500', bg: 'bg-indigo-50', border: 'border-indigo-200' },
-  { amount: '$50', description: 'Sponsors a full month of community programming and outreach',               gradient: 'from-sky-500 to-blue-500',   bg: 'bg-sky-50',    border: 'border-sky-200' },
+  { amount: '$5',  description: 'Provides mental health resources and materials for one student',            gradient: 'from-blue-500 to-blue-600',   bg: 'bg-blue-50',   border: 'border-blue-200' },
+  { amount: '$10', description: 'Supports a community support session for 10–15 teens',                     gradient: 'from-blue-500 to-blue-600', bg: 'bg-blue-50',   border: 'border-blue-200' },
+  { amount: '$25', description: 'Funds a cultural awareness workshop at a local school',                     gradient: 'from-blue-500 to-blue-600', bg: 'bg-blue-50', border: 'border-blue-200' },
+  { amount: '$50', description: 'Sponsors a full month of community programming and outreach',               gradient: 'from-blue-500 to-blue-600',   bg: 'bg-blue-50',    border: 'border-blue-200' },
 ];
 
 const whyPoints = [
@@ -39,27 +37,14 @@ const allocation = [
 
 export default function DonatePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50/30 relative overflow-hidden">
-      <PageBackground />
-      {/* Lightweight static background */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <div className="absolute -top-16 right-10 w-72 h-72 bg-blue-100/40 rounded-full blur-2xl" />
-        <div className="absolute top-1/2 -left-16 w-64 h-64 bg-indigo-100/30 rounded-full blur-2xl" />
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{ backgroundImage: 'radial-gradient(circle, #3B82F6 1px, transparent 1px)', backgroundSize: '40px 40px' }}
-        />
-      </div>
+    <div className="min-h-screen bg-white relative overflow-hidden">
 
       {/* ── HERO ── */}
       <section className="pt-16 pb-20 px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: 'easeOut' }}>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 leading-tight mb-6">
-              Support the next generation's{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-                mental wellness
-              </span>
+              Support the next generation's <span className="text-blue-700">mental wellness</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
               Your donation helps us create safe spaces where Asian teens can be heard, understood,
@@ -70,7 +55,7 @@ export default function DonatePage() {
       </section>
 
       {/* ── IMPACT LEVELS ── */}
-      <section className="py-16 px-6 lg:px-8 bg-white/80 relative z-10">
+      <section className="py-16 px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -90,7 +75,7 @@ export default function DonatePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group ${impact.bg} border ${impact.border} glow-hover rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
+                className={`group ${impact.bg} border ${impact.border} rounded-lg p-6 hover:shadow-lg transition-all duration-300`}
               >
                 {/* Top accent */}
                 <div className={`h-1 -mx-6 -mt-6 mb-6 rounded-t-2xl bg-gradient-to-r ${impact.gradient}`} />
@@ -133,7 +118,7 @@ export default function DonatePage() {
             </div>
 
             {/* Right: Allocation chart */}
-            <div className="gradient-border p-8 shadow-xl">
+            <div className="border border-blue-200 rounded-lg p-8 bg-white">
               <h3 className="text-xl font-bold text-gray-900 mb-6">Where Your Money Goes</h3>
               <div className="space-y-5">
                 {allocation.map(({ label, pct, desc }) => (
@@ -161,7 +146,7 @@ export default function DonatePage() {
       </section>
 
       {/* ── DONATION FORM ── */}
-      <section className="py-20 px-6 lg:px-8 bg-blue-50/60 relative z-10">
+      <section className="py-20 px-6 lg:px-8 bg-blue-50 relative z-10">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -178,7 +163,7 @@ export default function DonatePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="bg-white rounded-2xl p-8 shadow-xl border border-blue-100"
+            className="bg-white rounded-lg p-8 border border-blue-200"
           >
             <StripePaymentForm />
           </motion.div>

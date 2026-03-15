@@ -179,6 +179,10 @@ export default function Layout({ children, currentPageName }) {
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
   const location = useLocation();
 
+  // Pages with dark hero sections — nav text should be white when at top
+  const darkHeaderPages = ['Home', 'Mission', 'Contact', 'Programs', 'Partnerships'];
+  const isDark = darkHeaderPages.includes(currentPageName) && !isScrolled;
+
   useEffect(() => {
     let ticking = false;
 
@@ -327,10 +331,10 @@ export default function Layout({ children, currentPageName }) {
         <CrisisBanner />
 
         <header
-          className={`transition-colors duration-300 ${
+          className={`transition-all duration-300 ${
             isScrolled
               ? 'bg-white shadow-sm border-b border-gray-100'
-              : 'bg-white border-b border-gray-100'
+              : 'bg-transparent'
           }`}
         >
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -346,8 +350,8 @@ export default function Layout({ children, currentPageName }) {
                   alt="HopeBridge"
                   className="w-11 h-11 object-contain transition-transform duration-300 group-hover:scale-105"
                 />
-                <span className="text-xl font-bold text-gray-900 tracking-tight">
-                  Hope<span className="text-blue-600">Bridge</span>
+                <span className={`text-xl font-bold tracking-tight transition-colors duration-300 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  Hope<span className={isDark ? 'text-blue-200' : 'text-blue-600'}>Bridge</span>
                 </span>
               </Link>
 
@@ -368,8 +372,8 @@ export default function Layout({ children, currentPageName }) {
                           to={createPageUrl(link.page)}
                           className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                             isActive
-                              ? 'bg-blue-50 text-blue-700 font-semibold'
-                              : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                              ? isDark ? 'text-white font-semibold' : 'bg-blue-50 text-blue-700 font-semibold'
+                              : isDark ? 'text-white/80 hover:text-white hover:bg-white/10' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                           }`}
                         >
                           {link.label}
@@ -402,8 +406,8 @@ export default function Layout({ children, currentPageName }) {
                       to={createPageUrl(link.page)}
                       className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                         isActive
-                          ? 'bg-blue-50 text-blue-700 font-semibold'
-                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                          ? isDark ? 'text-white font-semibold' : 'bg-blue-50 text-blue-700 font-semibold'
+                          : isDark ? 'text-white/80 hover:text-white hover:bg-white/10' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                       }`}
                     >
                       {link.label}
@@ -415,12 +419,12 @@ export default function Layout({ children, currentPageName }) {
               {/* Desktop CTA */}
               <div className="hidden lg:flex items-center gap-3">
                 <Link to={createPageUrl('GetSupport')}>
-                  <Button variant="outline" className="border-blue-300 text-blue-700 hover:bg-blue-50 font-semibold rounded-lg px-5 transition-all duration-200">
+                  <Button variant="outline" className={`font-semibold rounded-lg px-5 transition-all duration-200 ${isDark ? 'border-white/40 text-white hover:bg-white/10 bg-transparent' : 'border-blue-300 text-blue-700 hover:bg-blue-50'}`}>
                     Get Support
                   </Button>
                 </Link>
                 <Link to={createPageUrl('Donate')}>
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 shadow-sm hover:shadow-md transition-all duration-200">
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 shadow-sm transition-all duration-200">
                     <Heart className="w-4 h-4 mr-1.5" />
                     Donate
                   </Button>
@@ -430,7 +434,7 @@ export default function Layout({ children, currentPageName }) {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+                className={`lg:hidden p-2 rounded-lg transition-colors ${isDark ? 'text-white/80 hover:text-white hover:bg-white/10' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'}`}
                 aria-label="Toggle navigation menu"
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

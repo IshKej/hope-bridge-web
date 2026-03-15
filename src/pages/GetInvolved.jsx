@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import CountUp from '../components/CountUp';
 import { ArrowRight } from 'lucide-react';
-import PageBackground from '../components/PageBackground';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
 
@@ -21,28 +20,28 @@ const volunteerRoles = [
     commitment: '2–3 hrs / week',
     description: 'Walk alongside a teen who needs guidance. Share your experiences and provide a steady, trusted presence.',
     skills: ['Empathy', 'Active listening', 'Shared cultural background'],
-    gradient: 'from-blue-500 to-indigo-500',
+    gradient: 'from-blue-600 to-blue-700',
   },
   {
     title: 'Workshop Facilitator',
     commitment: '4–6 hrs / month',
     description: 'Lead group workshops on topics like identity, stress, academic pressure, and family dynamics.',
     skills: ['Public speaking', 'Mental health interest', 'Teen experience'],
-    gradient: 'from-indigo-500 to-violet-500',
+    gradient: 'from-blue-600 to-blue-700',
   },
   {
     title: 'Community Outreach',
     commitment: '2–4 hrs / month',
     description: 'Help us reach more teens and families through tabling at events, school visits, and social media.',
     skills: ['Communication', 'Community ties', 'Social media savvy'],
-    gradient: 'from-sky-500 to-blue-500',
+    gradient: 'from-blue-600 to-blue-700',
   },
   {
     title: 'Event Support',
     commitment: 'As needed',
     description: 'Help run our community events, fundraisers, and awareness campaigns. Great for one-time or flexible involvement.',
     skills: ['Organization', 'Enthusiasm', 'Any background'],
-    gradient: 'from-teal-500 to-emerald-500',
+    gradient: 'from-blue-600 to-blue-700',
   },
 ];
 
@@ -58,16 +57,16 @@ const donationTiers = [
     amount: '$50',
     label: 'Advocate',
     impact: 'Provides workshop materials for a full group',
-    color: 'border-indigo-200 bg-indigo-50',
-    badge: 'bg-indigo-100 text-indigo-700',
+    color: 'border-blue-200 bg-blue-50',
+    badge: 'bg-blue-100 text-blue-700',
     featured: true,
   },
   {
     amount: '$100',
     label: 'Champion',
     impact: "Sponsors a teen's participation for a full month",
-    color: 'border-violet-200 bg-violet-50',
-    badge: 'bg-violet-100 text-violet-700',
+    color: 'border-blue-200 bg-blue-50',
+    badge: 'bg-blue-100 text-blue-700',
   },
 ];
 
@@ -75,7 +74,7 @@ const shareMessages = [
   {
     platform: 'Instagram',
     text: '"Did you know 1 in 4 Asian teens struggle with mental health in silence? HopeBridge is changing that. Share to spread the word."',
-    gradient: 'from-pink-500 to-orange-400',
+    gradient: 'from-blue-600 to-blue-500',
   },
   {
     platform: 'LinkedIn',
@@ -85,7 +84,7 @@ const shareMessages = [
   {
     platform: 'Text a friend',
     text: "\"There's this nonprofit called HopeBridge doing really important work for Asian teen mental health, thought you'd want to know.\"",
-    gradient: 'from-emerald-500 to-teal-500',
+    gradient: 'from-blue-600 to-blue-500',
   },
 ];
 
@@ -101,8 +100,7 @@ export default function GetInvolved() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50/30 relative overflow-hidden">
-      <PageBackground />
+    <div className="min-h-screen bg-white relative overflow-hidden">
 
       {/* ── HERO ── */}
       <section className="py-16 px-6 lg:px-8 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 relative overflow-hidden">
@@ -200,7 +198,7 @@ export default function GetInvolved() {
       </section>
 
       {/* ── DONATE ── */}
-      <section className="py-16 px-6 lg:px-8 bg-gray-50" id="donate">
+      <section className="py-16 px-6 lg:px-8 bg-white" id="donate">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -222,11 +220,11 @@ export default function GetInvolved() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className={`relative rounded-2xl border p-6 text-center ${tier.color} ${tier.featured ? 'ring-2 ring-indigo-400 shadow-lg' : ''}`}
+                className={`relative rounded-lg border p-6 text-center ${tier.color} ${tier.featured ? 'ring-2 ring-blue-400 shadow-lg' : ''}`}
               >
                 {tier.featured && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-bold shadow">Most Impactful</span>
+                    <span className="px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold shadow">Most Impactful</span>
                   </div>
                 )}
                 <div className="text-4xl font-black text-gray-900 mb-1">{tier.amount}</div>
@@ -238,7 +236,7 @@ export default function GetInvolved() {
 
           <div className="text-center">
             <Link to={createPageUrl('Donate')}>
-              <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 py-6 text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-8 py-6 text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300">
                 Make a Donation <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
@@ -293,7 +291,7 @@ export default function GetInvolved() {
       </section>
 
       {/* ── PARTNER ── */}
-      <section className="py-16 px-6 lg:px-8 bg-gray-50" id="partner">
+      <section className="py-16 px-6 lg:px-8 bg-white" id="partner">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <motion.div
@@ -321,7 +319,7 @@ export default function GetInvolved() {
                 ))}
               </ul>
               <Link to={createPageUrl('Partnerships')}>
-                <Button className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full px-8 py-6 text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-8 py-6 text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300">
                   Explore Partnerships <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
@@ -351,7 +349,7 @@ export default function GetInvolved() {
       </section>
 
       {/* ── FINAL CTA ── */}
-      <section className="py-16 px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 relative overflow-hidden">
+      <section className="py-16 px-6 lg:px-8 bg-blue-600 relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.06]"
           style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '32px 32px' }}
@@ -371,12 +369,12 @@ export default function GetInvolved() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to={createPageUrl('Volunteer')}>
-                <Button className="bg-white hover:bg-gray-50 text-blue-700 font-bold rounded-full px-8 py-6 text-base shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Button className="bg-white hover:bg-gray-50 text-blue-700 font-bold rounded-lg px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300">
                   Volunteer With Us <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
               <Link to={createPageUrl('Donate')}>
-                <Button className="bg-white hover:bg-gray-50 !text-blue-700 font-bold rounded-full px-8 py-6 text-base shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Button className="bg-white hover:bg-gray-50 !text-blue-700 font-bold rounded-lg px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300">
                   Donate Now
                 </Button>
               </Link>

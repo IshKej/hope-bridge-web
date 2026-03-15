@@ -128,14 +128,14 @@ export default function Contact() {
 
   if (isSuccess) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-gray-50 flex items-center justify-center px-6">
+      <div className="min-h-screen bg-white flex items-center justify-center px-6">
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center max-w-md">
-          <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-            <CheckCircle2 className="w-10 h-10 text-green-600" />
+          <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+            <CheckCircle2 className="w-10 h-10 text-blue-600" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Thank you for reaching out!</h2>
           <p className="text-gray-600 mb-8">We'll get back to you within 24–48 hours.</p>
-          <Button onClick={() => setIsSuccess(false)} className="rounded-full bg-blue-600 hover:bg-blue-700 text-white">
+          <Button onClick={() => setIsSuccess(false)} className="rounded-lg bg-blue-600 hover:bg-blue-700 text-white">
             Send Another Message
           </Button>
         </motion.div>
@@ -144,24 +144,14 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-gray-50 relative overflow-hidden">
-      {/* Lightweight static background */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <div className="absolute -top-16 -left-16 w-72 h-72 bg-blue-100/50 rounded-full blur-2xl" />
-        <div className="absolute top-1/2 -right-16 w-64 h-64 bg-blue-200/30 rounded-full blur-2xl" />
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{ backgroundImage: 'radial-gradient(circle, #3B82F6 1px, transparent 1px)', backgroundSize: '40px 40px' }}
-        />
-      </div>
+    <div className="min-h-screen bg-white relative overflow-hidden">
 
       {/* ── HERO ── */}
       <section className="pt-16 pb-16 px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: 'easeOut' }}>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 leading-tight mb-6">
-              Let's{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">connect</span>
+              Let's <span className="text-blue-700">connect</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
               Whether you're seeking support, want to partner with us, or have questions about
@@ -179,7 +169,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-3xl p-10 shadow-2xl border border-blue-100"
+            className="bg-white rounded-lg p-10 border border-blue-200"
           >
             {submitError && (
               <div className="flex items-start gap-3 p-4 bg-red-50 border border-red-200 rounded-xl mb-6">
@@ -285,7 +275,7 @@ export default function Contact() {
               <Button
                 type="submit"
                 disabled={isSubmitting || Object.keys(errors).length > 0}
-                className="glow-hover w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white rounded-xl py-6 text-lg font-bold shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+                className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white rounded-lg py-6 text-lg font-bold shadow-sm hover:shadow-md transition-all duration-300"
               >
                 {isSubmitting ? (
                   <><Loader2 className="w-5 h-5 mr-2 animate-spin" />Sending...</>
@@ -305,14 +295,14 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-4xl font-black text-gray-900 text-center mb-12"
           >
-            Get in <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">Touch</span>
+            Get in <span className="text-blue-700">Touch</span>
           </motion.h2>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { icon: Mail,   title: 'Email Us',  content: 'hopebridgecommunityservices@gmail.com', href: 'mailto:hopebridgecommunityservices@gmail.com', bg: 'bg-blue-50', border: 'border-blue-200', iconBg: 'bg-blue-100', iconColor: 'text-blue-600' },
-              { icon: Phone,  title: 'Call Us',   content: '425-610-7760',                           href: 'tel:425-610-7760',                             bg: 'bg-indigo-50', border: 'border-indigo-200', iconBg: 'bg-indigo-100', iconColor: 'text-indigo-600' },
-              { icon: MapPin, title: 'Location',  content: 'Sammamish, WA',                          sub: 'Serving King County',                           bg: 'bg-sky-50', border: 'border-sky-200', iconBg: 'bg-sky-100', iconColor: 'text-sky-600' },
+              { icon: Phone,  title: 'Call Us',   content: '425-610-7760',                           href: 'tel:425-610-7760',                             bg: 'bg-blue-50', border: 'border-blue-200', iconBg: 'bg-blue-100', iconColor: 'text-blue-600' },
+              { icon: MapPin, title: 'Location',  content: 'Sammamish, WA',                          sub: 'Serving King County',                           bg: 'bg-blue-50', border: 'border-blue-200', iconBg: 'bg-blue-100', iconColor: 'text-blue-600' },
             ].map(({ icon: Icon, title, content, href, sub, bg, border, iconBg, iconColor }, i) => (
               <motion.div
                 key={title}
@@ -320,7 +310,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`${bg} glow-hover border ${border} rounded-2xl px-6 py-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
+                className={`${bg} border ${border} rounded-lg px-6 py-8 text-center hover:shadow-lg transition-all duration-300`}
               >
                 <div className={`w-14 h-14 rounded-full ${iconBg} flex items-center justify-center mx-auto mb-4`}>
                   <Icon className={`w-7 h-7 ${iconColor}`} />

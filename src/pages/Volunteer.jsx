@@ -6,15 +6,14 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
-import PageBackground from '../components/PageBackground';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgolbkbp';
 
 const roles = [
-  { label: 'Peer Mentor',         desc: 'Support fellow teens through 1-on-1 conversations and group sessions',      accent: 'from-blue-600 to-blue-500', ring: 'border-blue-400', bg: 'bg-blue-50' },
-  { label: 'Event Helper',         desc: 'Help plan and run workshops, community events, and outreach activities',     accent: 'from-blue-600 to-blue-500', ring: 'border-blue-400', bg: 'bg-blue-50' },
-  { label: 'Workshop Facilitator', desc: 'Lead or co-lead workshops on stress, identity, and wellness topics',         accent: 'from-blue-600 to-blue-500', ring: 'border-blue-400', bg: 'bg-blue-50' },
-  { label: 'Content & Outreach',   desc: 'Help with social media, writing, design, or community outreach',             accent: 'from-blue-600 to-blue-500', ring: 'border-blue-400', bg: 'bg-blue-50' },
+  { label: 'Peer Mentor',         desc: 'Support fellow teens through 1-on-1 conversations and group sessions',      accent: 'from-blue-700 to-blue-600', ring: 'border-blue-400', bg: 'bg-blue-50' },
+  { label: 'Event Helper',         desc: 'Help plan and run workshops, community events, and outreach activities',     accent: 'from-blue-700 to-blue-600', ring: 'border-blue-400', bg: 'bg-blue-50' },
+  { label: 'Workshop Facilitator', desc: 'Lead or co-lead workshops on stress, identity, and wellness topics',         accent: 'from-blue-700 to-blue-600', ring: 'border-blue-400', bg: 'bg-blue-50' },
+  { label: 'Content & Outreach',   desc: 'Help with social media, writing, design, or community outreach',             accent: 'from-blue-700 to-blue-600', ring: 'border-blue-400', bg: 'bg-blue-50' },
 ];
 
 export default function Volunteer() {
@@ -60,11 +59,10 @@ export default function Volunteer() {
 
   if (isSuccess) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-white flex items-center justify-center px-6 relative overflow-hidden">
-        <PageBackground />
+      <div className="min-h-screen bg-white flex items-center justify-center px-6 relative overflow-hidden">
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center max-w-md relative z-10">
-          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-200">
-            <CheckCircle2 className="w-10 h-10 text-white" />
+          <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+            <CheckCircle2 className="w-10 h-10 text-blue-600" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Application Received!</h2>
           <p className="text-gray-600 mb-2">Thank you for wanting to volunteer with HopeBridge.</p>
@@ -75,16 +73,14 @@ export default function Volunteer() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50/30 to-white relative overflow-hidden">
-      <PageBackground />
+    <div className="min-h-screen bg-white relative overflow-hidden">
 
       {/* Hero */}
       <section className="pt-16 pb-14 px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }}>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 leading-tight mb-4">
-              Make a real{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">difference</span>
+              Make a real <span className="text-blue-700">difference</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Join a team of passionate students working to break the stigma around mental health in
@@ -108,10 +104,10 @@ export default function Volunteer() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
                   onClick={() => { setFormData(prev => ({ ...prev, role: r.label })); setErrors(prev => { const e = {...prev}; delete e.role; return e; }); }}
-                  className={`relative rounded-2xl border-2 cursor-pointer transition-all duration-300 overflow-hidden ${
+                  className={`relative rounded-lg border-2 cursor-pointer transition-all duration-300 overflow-hidden ${
                     selected
-                      ? `${r.ring} shadow-lg shadow-blue-100 scale-[1.01]`
-                      : 'border-blue-100 bg-white/70 hover:border-blue-300 hover:shadow-md hover:-translate-y-0.5'
+                      ? `${r.ring} shadow-md`
+                      : 'border-blue-100 bg-white/70 hover:border-blue-300 hover:shadow-sm'
                   }`}
                 >
                   {/* Gradient top bar */}
@@ -147,7 +143,7 @@ export default function Volunteer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
             onSubmit={handleSubmit}
-            className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl shadow-blue-100/40 border border-blue-100 space-y-5"
+            className="bg-white rounded-lg p-8 border border-blue-200 space-y-5"
           >
             <div className="flex items-center gap-3 mb-2">
               <h2 className="text-xl font-bold text-gray-900">Your Information</h2>
@@ -211,7 +207,7 @@ export default function Volunteer() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 disabled:opacity-50 text-white rounded-xl py-5 text-base font-bold shadow-md shadow-blue-200 hover:shadow-lg transition-all duration-200"
+              className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white rounded-lg py-5 text-base font-bold shadow-sm hover:shadow-md transition-all duration-200"
             >
               {isSubmitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Submitting...</> : 'Submit Application'}
             </Button>

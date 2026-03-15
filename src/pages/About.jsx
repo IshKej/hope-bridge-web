@@ -1,21 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
-import PageBackground from '../components/PageBackground';
-
-// kept for backward compat, replaced by PageBackground
-function PageBg() {
-  return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-      <div className="absolute -top-20 -left-20 w-80 h-80 bg-blue-100/50 rounded-full blur-2xl" />
-      <div className="absolute top-1/2 -right-20 w-64 h-64 bg-blue-200/30 rounded-full blur-2xl" />
-      <div
-        className="absolute inset-0 opacity-[0.05]"
-        style={{ backgroundImage: 'radial-gradient(circle, #3B82F6 1px, transparent 1px)', backgroundSize: '38px 38px' }}
-      />
-    </div>
-  );
-}
 
 const teamMembers = [
   {
@@ -23,7 +8,7 @@ const teamMembers = [
     role: 'Operations Lead',
     email: 'rishirkumar@outlook.com',
     initials: 'RR',
-    color: 'from-indigo-500 to-blue-600',
+    color: 'from-blue-700 to-blue-600',
     image: '/images/team/rishi-photo.svg',
     bio: 'Rishi is a freshman at Eastlake High School who loves connecting with his culture through music, food, and festivals. Through the Hope Bridge initiative, he hopes to shed light on the cultural gap that many teens face.',
   },
@@ -32,7 +17,7 @@ const teamMembers = [
     role: 'Administrative Lead',
     email: 'stingingnettle1024@gmail.com',
     initials: 'AK',
-    color: 'from-blue-600 to-cyan-500',
+    color: 'from-blue-600 to-blue-500',
     image: '/images/team/arjun-photo.svg',
     bio: 'Arjun is a 14-year-old at Eastlake High School. An avid track runner and committed trombonist, he hopes to drive positive change within his community.',
   },
@@ -50,7 +35,7 @@ const teamMembers = [
     role: 'Software Development Lead',
     email: 'ishaankej@outlook.com',
     initials: 'IK',
-    color: 'from-indigo-600 to-blue-500',
+    color: 'from-blue-600 to-blue-500',
     image: '/images/team/ishaan-photo.svg',
     bio: 'Ishaan is a freshman at Eastlake High School who loves helping his community in any way possible. As a passionate coder and track runner, he aims to support Asian American teens in navigating the unique challenges addressed by Hope Bridge.',
   },
@@ -59,7 +44,7 @@ const teamMembers = [
     role: 'Social Media Lead',
     email: 'reacharnavmalhotra@gmail.com',
     initials: 'AM',
-    color: 'from-blue-500 to-indigo-600',
+    color: 'from-blue-500 to-blue-600',
     image: '/images/team/arnav-photo.svg',
     bio: 'Arnav is a 14-year-old student at Eastlake High School. He has a deep passion for soccer and aims to support other Asian American teens facing struggles similar to his own.',
   },
@@ -68,7 +53,7 @@ const teamMembers = [
     role: 'Research Lead',
     email: 'samvid.s.prabhu@gmail.com',
     initials: 'SP',
-    color: 'from-sky-500 to-blue-600',
+    color: 'from-blue-500 to-blue-600',
     image: '/images/team/samvid-photo.svg',
     bio: 'Samvid is a freshman at Kamiak HS who enjoys business, marketing, and playing guitar. With Indian-Konkani roots and experience living in both Finland and the US, he understands the struggles of dual identity.',
   },
@@ -76,9 +61,7 @@ const teamMembers = [
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50/30 relative overflow-hidden">
-      <PageBackground />
-      <PageBg />
+    <div className="min-h-screen bg-white relative overflow-hidden">
 
       {/* ── HERO ── */}
       <section className="pt-16 pb-20 px-6 lg:px-8 relative z-10">
@@ -89,10 +72,7 @@ export default function About() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 leading-tight">
-              About{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-                HopeBridge
-              </span>
+              About <span className="text-blue-700">HopeBridge</span>
             </h1>
             <p className="mt-6 text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
               Mental health support built by Asian teens, for Asian teens, because we've lived it.
@@ -109,19 +89,18 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto"
+            className="max-w-3xl mx-auto border-t border-gray-200 pt-12"
           >
-            <div className="bg-white rounded-3xl p-10 shadow-lg border border-blue-100">
-              <h2 className="text-3xl font-bold text-blue-600 mb-6">Our Story</h2>
-              <div className="mb-8 rounded-2xl overflow-hidden shadow-md">
-                <img
-                  src="/images/activities/brochure-outreach.jpg"
-                  alt="HopeBridge members sharing mental health brochures during outreach"
-                  className="w-full h-64 sm:h-80 object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+            <h2 className="text-3xl font-bold text-blue-700 mb-6">Our Story</h2>
+            <div className="mb-8 rounded-lg overflow-hidden border border-gray-200">
+              <img
+                src="/images/activities/brochure-outreach.jpg"
+                alt="HopeBridge members sharing mental health brochures during outreach"
+                className="w-full h-64 sm:h-80 object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p className="text-lg">
                   Hope Bridge started with something simple: conversations.
                 </p>
@@ -141,9 +120,7 @@ export default function About() {
                   Hope Bridge is still growing, but the purpose is simple: no teen should feel alone in the pressures they face. Join us for this journey!
                 </p>
               </div>
-            </div>
-
-          </motion.div>
+            </motion.div>
         </div>
       </section>
 
@@ -157,7 +134,7 @@ export default function About() {
             className="text-center mb-14"
           >
             <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4">
-              Meet the <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">Team</span>
+              Meet the <span className="text-blue-700">Team</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Six Asian teens from Sammamish, WA who decided to build the support system they wished they'd had.
@@ -184,7 +161,7 @@ function TeamMemberCard({ member, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.07 }}
-      className="group bg-white rounded-2xl p-6 text-center border border-blue-100 hover:border-blue-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col items-center"
+      className="group bg-white rounded-lg p-6 text-center border border-blue-100 hover:border-blue-300 transition-all duration-300 hover:shadow-lg flex flex-col items-center"
     >
       {showImage ? (
         <img
@@ -195,7 +172,7 @@ function TeamMemberCard({ member, index }) {
           className="w-full max-w-[260px] aspect-[4/5] object-cover rounded-xl mx-auto mb-5 shadow-lg border border-blue-100"
         />
       ) : (
-        <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${member.color} mx-auto mb-4 flex items-center justify-center shadow-lg`}>
+        <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${member.color} mx-auto mb-4 flex items-center justify-center`}>
           <span className="text-white font-black text-xl">{member.initials}</span>
         </div>
       )}

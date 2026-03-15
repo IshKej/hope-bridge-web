@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import {
   Send, ArrowRight
 } from 'lucide-react';
-import PageBackground from '../components/PageBackground';
 
 
 const processSteps = [
@@ -83,15 +82,9 @@ export default function Partnerships() {
     }`;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50/30 relative overflow-hidden">
-      <PageBackground />
-
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Hero */}
       <section className="pt-16 pb-20 px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute -top-10 left-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl" />
-          <div className="absolute top-1/3 -right-10 w-72 h-72 bg-indigo-100/30 rounded-full blur-3xl" />
-        </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -99,10 +92,7 @@ export default function Partnerships() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
-              Partner with{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                HopeBridge
-              </span>
+              Partner with <span className="text-blue-700">HopeBridge</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
               Whether you are a school, nonprofit, mental health provider, or community organization,
@@ -110,7 +100,7 @@ export default function Partnerships() {
             </p>
             <a
               href="#partnership-form"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold text-base transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/30"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold text-base transition-all duration-300 shadow-lg"
             >
               Start a Partnership
               <ArrowRight className="w-5 h-5" />
@@ -121,11 +111,7 @@ export default function Partnerships() {
 
 
       {/* How It Works */}
-      <section className="py-16 px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-indigo-600 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" aria-hidden="true">
-          <div className="absolute top-0 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-56 h-56 bg-blue-200 rounded-full blur-3xl" />
-        </div>
+      <section className="py-16 px-6 lg:px-8 bg-blue-600 relative overflow-hidden">
         <div className="max-w-5xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -183,7 +169,7 @@ export default function Partnerships() {
                 method="POST"
                 onSubmit={handleSubmit}
                 noValidate
-                className="bg-white rounded-2xl border border-slate-100 shadow-sm p-8 space-y-6"
+                className="bg-white rounded-lg border border-blue-200 p-8 space-y-6"
               >
                 <input type="hidden" name="_subject" value={`Partnership Inquiry, ${formData.orgName || 'HopeBridge'}`} />
                 {/* Contact Info */}
@@ -372,7 +358,7 @@ export default function Partnerships() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-bold flex items-center justify-center gap-2"
                 >
                   <Send className="w-4 h-4" />
                   Submit Partnership Inquiry

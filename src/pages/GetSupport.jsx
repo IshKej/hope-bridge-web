@@ -6,7 +6,6 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
-import PageBackground from '../components/PageBackground';
 
 // ── Data ────────────────────────────────────────────────────────────
 const crisisLines = [
@@ -17,8 +16,8 @@ const crisisLines = [
     sms: 'sms:988',
     description: 'Free, confidential support 24/7. Talk to a trained counselor.',
     tag: '24/7 • Free • Confidential',
-    color: 'border-red-200 bg-red-50',
-    badgeColor: 'bg-red-100 text-red-700',
+    color: 'border-blue-200 bg-blue-50',
+    badgeColor: 'bg-blue-100 text-blue-700',
   },
   {
     name: 'Crisis Text Line',
@@ -35,8 +34,8 @@ const crisisLines = [
     href: 'tel:1-866-488-7386',
     description: 'Crisis intervention for LGBTQ+ young people under 25. Also text START to 678-678.',
     tag: '24/7 • LGBTQ+ focused',
-    color: 'border-indigo-200 bg-indigo-50',
-    badgeColor: 'bg-indigo-100 text-indigo-700',
+    color: 'border-blue-200 bg-blue-50',
+    badgeColor: 'bg-blue-100 text-blue-700',
   },
   {
     name: 'SAMHSA National Helpline',
@@ -44,8 +43,8 @@ const crisisLines = [
     href: 'tel:1-800-662-4357',
     description: 'Free, confidential treatment referrals for mental health and substance use.',
     tag: '24/7 • Free • Multilingual',
-    color: 'border-emerald-200 bg-emerald-50',
-    badgeColor: 'bg-emerald-100 text-emerald-700',
+    color: 'border-blue-200 bg-blue-50',
+    badgeColor: 'bg-blue-100 text-blue-700',
   },
 ];
 
@@ -166,14 +165,13 @@ export default function GetSupport() {
 
   const colorMap = {
     blue: { bg: 'bg-blue-50', border: 'border-blue-200', badge: 'bg-blue-100 text-blue-700', btn: 'bg-blue-600 hover:bg-blue-700', check: 'text-blue-500' },
-    indigo: { bg: 'bg-indigo-50', border: 'border-indigo-200', badge: 'bg-indigo-100 text-indigo-700', btn: 'bg-indigo-600 hover:bg-indigo-700', check: 'text-indigo-500' },
-    sky: { bg: 'bg-sky-50', border: 'border-sky-200', badge: 'bg-sky-100 text-sky-700', btn: 'bg-sky-600 hover:bg-sky-700', check: 'text-sky-500' },
+    indigo: { bg: 'bg-blue-50', border: 'border-blue-200', badge: 'bg-blue-100 text-blue-700', btn: 'bg-blue-600 hover:bg-blue-700', check: 'text-blue-500' },
+    sky: { bg: 'bg-blue-50', border: 'border-blue-200', badge: 'bg-blue-100 text-blue-700', btn: 'bg-blue-600 hover:bg-blue-700', check: 'text-blue-500' },
   };
   const c = colorMap[content.color];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50/30 relative overflow-hidden">
-      <PageBackground />
+    <div className="min-h-screen bg-white relative overflow-hidden">
 
       {/* ── HERO ── */}
       <section className="py-16 px-6 lg:px-8 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 relative overflow-hidden">
@@ -200,11 +198,11 @@ export default function GetSupport() {
       </section>
 
       {/* ── CRISIS FIRST ── */}
-      <section className="py-10 px-6 lg:px-8 bg-red-50 border-y border-red-100">
+      <section className="py-10 px-6 lg:px-8 bg-blue-50 border-y border-blue-100">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
-            <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
-            <h2 className="text-lg font-bold text-red-900">If you're in crisis right now, reach out immediately</h2>
+            <AlertCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
+            <h2 className="text-lg font-bold text-gray-900">If you're in crisis right now, reach out immediately</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {crisisLines.map((line, i) => (
@@ -289,7 +287,7 @@ export default function GetSupport() {
       </section>
 
       {/* ── ASIAN-SPECIFIC RESOURCES ── */}
-      <section className="py-16 px-6 lg:px-8 bg-gray-50">
+      <section className="py-16 px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -297,7 +295,7 @@ export default function GetSupport() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-100 text-indigo-700 text-xs font-semibold uppercase tracking-wide mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide mb-4">
               Culturally-Informed
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
@@ -381,7 +379,7 @@ export default function GetSupport() {
       </section>
 
       {/* ── HOPEBRIDGE CTA ── */}
-      <section className="py-16 px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 relative overflow-hidden">
+      <section className="py-16 px-6 lg:px-8 bg-blue-600 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.06]" style={{
           backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
           backgroundSize: '32px 32px'
@@ -401,12 +399,12 @@ export default function GetSupport() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to={createPageUrl('Contact')}>
-                <Button className="bg-white hover:bg-gray-50 !text-blue-700 font-bold rounded-full px-8 py-6 text-base shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Button className="bg-white hover:bg-gray-50 !text-blue-700 font-bold rounded-lg px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300">
                   Join a Support Group <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
               <Link to={createPageUrl('Programs')}>
-                <Button className="bg-white hover:bg-gray-50 !text-blue-700 font-bold rounded-full px-8 py-6 text-base shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Button className="bg-white hover:bg-gray-50 !text-blue-700 font-bold rounded-lg px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300">
                   See All Programs
                 </Button>
               </Link>

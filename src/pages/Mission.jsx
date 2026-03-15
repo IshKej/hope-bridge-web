@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import PageBackground from '../components/PageBackground';
-// AnimatedBackground removed, page already has rich visual sections; the blobs were causing GPU lag
 
 // Animated counter component
 function AnimatedCounter({ target, suffix = '', prefix = '' }) {
@@ -59,7 +57,7 @@ export default function Mission() {
         'Managing family expectations around education',
         'Building resilience without burning out'
       ],
-      color: 'from-indigo-500 to-blue-600',
+      color: 'from-blue-600 to-blue-700',
     },
     {
       title: 'Healing Family Disconnect',
@@ -75,8 +73,7 @@ export default function Mission() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50/30 relative overflow-hidden">
-      <PageBackground />
+    <div className="min-h-screen bg-white relative overflow-hidden">
 
       {/* ── HERO ── */}
       <section className="relative pt-16 pb-24 px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 wave-divider">
@@ -142,7 +139,7 @@ export default function Mission() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-3xl p-10 lg:p-14 shadow-lg border border-blue-100">
+            className="border-t border-gray-200 pt-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Mission Statement</h2>
             <div className="space-y-5 text-gray-600 leading-relaxed text-lg">
               <p>
@@ -165,7 +162,7 @@ export default function Mission() {
             viewport={{ once: true }}
             className="text-center mb-14">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-              Three Interconnected <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">Goals</span>
+              Three Interconnected <span className="text-blue-700">Goals</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Our work focuses on these essential pillars of Asian teen mental wellness
@@ -184,7 +181,7 @@ export default function Mission() {
                 {/* Gradient top accent */}
                 <div className={`absolute top-0 left-6 right-6 h-1 rounded-b-full bg-gradient-to-r ${goal.color} opacity-60 group-hover:opacity-100 transition-opacity`} />
 
-                <div className="bg-white rounded-2xl p-8 shadow-md border border-blue-100 hover:shadow-xl hover:border-blue-300 transition-all duration-300 h-full">
+                <div className="bg-white rounded-lg p-8 border border-blue-100 hover:border-blue-300 transition-all duration-300 h-full">
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">
                     {goal.title}
                   </h3>
@@ -206,11 +203,7 @@ export default function Mission() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-16 px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-indigo-600 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-300 rounded-full blur-3xl" />
-        </div>
+      <section className="py-16 px-6 lg:px-8 bg-blue-600 relative overflow-hidden">
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -223,10 +216,10 @@ export default function Mission() {
               Whether you're a teen who needs support, a parent seeking resources, or someone who wants to help, there's a place for you at HopeBridge.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/GetSupport" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+              <a href="/GetSupport" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
                 Get Support <ArrowRight className="w-5 h-5" />
               </a>
-              <a href="/Donate" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white border-2 border-white/30 rounded-full font-bold text-lg hover:bg-white/20 hover:scale-105 transition-all duration-300 backdrop-blur-sm">
+              <a href="/Donate" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white border-2 border-white/30 rounded-lg font-bold text-lg hover:bg-white/20 transition-all duration-300 backdrop-blur-sm">
                 Donate
               </a>
             </div>

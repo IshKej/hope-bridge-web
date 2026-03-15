@@ -6,7 +6,6 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
-import PageBackground from '../components/PageBackground';
 
 const crisisResources = [
   {
@@ -14,8 +13,8 @@ const crisisResources = [
     description: "Call or text 988 anytime, free, confidential, available 24/7.",
     action: "Call or Text 988",
     href: "tel:988",
-    color: "bg-red-50 border-red-200",
-    actionColor: "text-red-600",
+    color: "bg-blue-50 border-blue-200",
+    actionColor: "text-blue-600",
     tag: "24/7"
   },
   {
@@ -23,8 +22,8 @@ const crisisResources = [
     description: "Text HOME to 741741 for free crisis support via text message.",
     action: "Text HOME to 741741",
     href: "sms:741741&body=HOME",
-    color: "bg-orange-50 border-orange-200",
-    actionColor: "text-orange-600",
+    color: "bg-blue-50 border-blue-200",
+    actionColor: "text-blue-600",
     tag: "Text"
   },
   {
@@ -32,8 +31,8 @@ const crisisResources = [
     description: "Crisis support for LGBTQ+ youth. Call 1-866-488-7386 or text START to 678-678.",
     action: "Call 1-866-488-7386",
     href: "tel:18664887386",
-    color: "bg-purple-50 border-purple-200",
-    actionColor: "text-purple-600",
+    color: "bg-blue-50 border-blue-200",
+    actionColor: "text-blue-600",
     tag: "LGBTQ+"
   },
   {
@@ -119,15 +118,9 @@ export default function Resources() {
   const [activeTab, setActiveTab] = useState("Crisis Help");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50/30 relative overflow-hidden">
-      <PageBackground />
-
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Hero */}
       <section className="pt-16 pb-16 px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute -top-10 left-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl" />
-          <div className="absolute top-1/3 -right-10 w-72 h-72 bg-sky-100/30 rounded-full blur-3xl" />
-        </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -135,10 +128,7 @@ export default function Resources() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
-              Support is{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                always here
-              </span>
+              Support is <span className="text-blue-700">always here</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
               Whether you need immediate help or are looking for long-term support, these
@@ -149,17 +139,17 @@ export default function Resources() {
       </section>
 
       {/* Tab Navigation */}
-      <section className="px-6 lg:px-8 sticky top-16 z-30 bg-white/90 backdrop-blur-md border-b border-slate-100">
+      <section className="px-6 lg:px-8 sticky top-16 z-30 bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto">
           <div className="flex gap-1 py-3">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                className={`px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   activeTab === tab
-                    ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25'
-                    : 'text-slate-600 hover:bg-slate-100'
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'text-gray-600 hover:bg-gray-100'
                 }`}
               >
                 {tab}
@@ -181,9 +171,9 @@ export default function Resources() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <div className="flex items-center gap-3 mb-8 p-4 bg-red-50 rounded-2xl border border-red-100">
-                <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
-                <p className="text-sm text-red-700 font-medium">
+              <div className="flex items-center gap-3 mb-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <AlertCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                <p className="text-sm text-blue-700 font-medium">
                   If you are in immediate danger, call 911. These resources are here when you need to talk.
                 </p>
               </div>
@@ -194,7 +184,7 @@ export default function Resources() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.07 }}
-                    className={`relative rounded-2xl p-6 border ${r.color} hover:shadow-lg transition-all duration-300`}
+                    className={`relative rounded-lg p-6 border ${r.color} hover:shadow-lg transition-all duration-300`}
                   >
                     <div className="flex items-start justify-between mb-4">
                       <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-white/70 text-gray-600">
@@ -235,7 +225,7 @@ export default function Resources() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.07 }}
-                    className="rounded-2xl p-6 bg-white border border-slate-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300"
+                    className="rounded-lg p-6 bg-white border border-blue-100 hover:shadow-lg hover:border-blue-300 transition-all duration-300"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <h3 className="font-black text-gray-900 leading-snug pr-3">{r.name}</h3>
@@ -276,7 +266,7 @@ export default function Resources() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.07 }}
-                    className="rounded-2xl p-6 bg-white border border-slate-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300"
+                    className="rounded-lg p-6 bg-white border border-blue-100 hover:shadow-lg hover:border-blue-300 transition-all duration-300"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <h3 className="font-black text-gray-900 leading-snug pr-3">{r.name}</h3>
@@ -309,12 +299,8 @@ export default function Resources() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl p-10 text-center text-white relative overflow-hidden"
+            className="bg-blue-600 rounded-lg p-10 text-center text-white relative overflow-hidden"
           >
-            <div className="absolute inset-0 opacity-10" aria-hidden="true">
-              <div className="absolute top-0 left-1/3 w-48 h-48 bg-white rounded-full blur-3xl" />
-              <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-blue-200 rounded-full blur-3xl" />
-            </div>
             <div className="relative z-10">
               <h2 className="text-3xl font-black mb-4">
                 Want support from HopeBridge directly?
@@ -324,7 +310,7 @@ export default function Resources() {
                 You do not have to navigate this alone.
               </p>
               <Link to={createPageUrl('GetSupport')}>
-                <Button className="bg-white !text-blue-600 hover:bg-blue-50 font-bold px-8 py-4 rounded-full text-base shadow-xl transition-all duration-300 hover:scale-105">
+                <Button className="bg-white !text-blue-600 hover:bg-blue-50 font-bold px-8 py-4 rounded-lg text-base shadow-lg transition-all duration-300">
                   Get Support
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
