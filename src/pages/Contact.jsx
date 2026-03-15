@@ -293,16 +293,16 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl font-black text-white text-center mb-12"
+            className="text-4xl font-black text-blue-900 text-center mb-12"
           >
-            Get in <span className="text-blue-300">Touch</span>
+            Get in <span className="text-blue-600">Touch</span>
           </motion.h2>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: Mail,   title: 'Email Us',  content: 'hopebridgecommunityservices@gmail.com', href: 'mailto:hopebridgecommunityservices@gmail.com', bg: 'bg-blue-50', border: 'border-blue-200', iconBg: 'bg-blue-100', iconColor: 'text-blue-600' },
-              { icon: Phone,  title: 'Call Us',   content: '425-610-7760',                           href: 'tel:425-610-7760',                             bg: 'bg-blue-50', border: 'border-blue-200', iconBg: 'bg-blue-100', iconColor: 'text-blue-600' },
-              { icon: MapPin, title: 'Location',  content: 'Sammamish, WA',                          sub: 'Serving King County',                           bg: 'bg-blue-50', border: 'border-blue-200', iconBg: 'bg-blue-100', iconColor: 'text-blue-600' },
+              { icon: Mail,   title: 'Email Us',  content: 'hopebridgecommunityservices@gmail.com', href: 'mailto:hopebridgecommunityservices@gmail.com', bg: 'bg-white', border: 'border-blue-200', iconBg: 'bg-blue-100', iconColor: 'text-blue-600' },
+              { icon: Phone,  title: 'Call Us',   content: '425-610-7760',                           href: 'tel:425-610-7760',                             bg: 'bg-white', border: 'border-blue-200', iconBg: 'bg-blue-100', iconColor: 'text-blue-600' },
+              { icon: MapPin, title: 'Location',  content: 'Sammamish, WA',                          sub: 'Serving King County',                           bg: 'bg-white', border: 'border-blue-200', iconBg: 'bg-blue-100', iconColor: 'text-blue-600' },
             ].map(({ icon: Icon, title, content, href, sub, bg, border, iconBg, iconColor }, i) => (
               <motion.div
                 key={title}
@@ -310,18 +310,18 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`${bg} border ${border} rounded-lg px-6 py-8 text-center hover:shadow-lg transition-all duration-300`}
+                className={`${bg} border ${border} rounded-xl px-6 py-8 text-center hover:shadow-lg hover:border-blue-400 transition-all duration-300`}
               >
                 <div className={`w-14 h-14 rounded-full ${iconBg} flex items-center justify-center mx-auto mb-4`}>
                   <Icon className={`w-7 h-7 ${iconColor}`} />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{title}</h3>
+                <h3 className="text-lg font-bold text-blue-900 mb-2">{title}</h3>
                 {href ? (
-                  <a href={href} className="text-blue-600 hover:text-blue-700 text-sm break-words hover:underline transition-colors">{content}</a>
+                  <a href={href} className="text-blue-600 hover:text-blue-700 text-xs font-medium whitespace-nowrap hover:underline transition-colors">{content}</a>
                 ) : (
                   <>
-                    <p className="text-gray-700 font-medium">{content}</p>
-                    {sub && <p className="text-gray-500 text-sm">{sub}</p>}
+                    <p className="text-blue-800 font-medium">{content}</p>
+                    {sub && <p className="text-blue-500 text-sm">{sub}</p>}
                   </>
                 )}
               </motion.div>

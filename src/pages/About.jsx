@@ -168,7 +168,7 @@ function TeamMemberCard({ member, index }) {
           alt={member.name}
           loading="lazy"
           onError={() => setShowImage(false)}
-          className="w-full max-w-[260px] aspect-[4/5] object-cover rounded-xl mx-auto mb-5 shadow-lg border border-blue-700"
+          className="w-full max-w-[260px] aspect-[4/5] object-cover rounded-xl mx-auto mb-5 shadow-md border border-blue-200"
         />
       ) : (
         <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${member.color} mx-auto mb-4 flex items-center justify-center`}>
@@ -176,13 +176,13 @@ function TeamMemberCard({ member, index }) {
         </div>
       )}
 
-      <h3 className="text-lg font-bold text-white">{member.name}</h3>
-      <p className="text-blue-300 font-semibold text-sm mt-1">{member.role}</p>
-      {member.bio && <p className="text-sm text-blue-100 mt-3 leading-relaxed">{member.bio}</p>}
+      <h3 className="text-lg font-bold text-blue-900">{member.name}</h3>
+      <p className="text-blue-600 font-semibold text-sm mt-1">{member.role}</p>
+      {member.bio && <p className="text-sm text-blue-700 mt-3 leading-relaxed">{member.bio}</p>}
       {member.email && (
         <a
           href={`mailto:${member.email}`}
-          className="mt-3 inline-flex items-center gap-1.5 text-xs text-blue-400 hover:text-blue-200 transition-colors"
+          className="mt-3 inline-flex items-center gap-1.5 text-xs text-blue-500 hover:text-blue-700 transition-colors"
         >
           <Mail className="w-3 h-3" />
           {member.email}

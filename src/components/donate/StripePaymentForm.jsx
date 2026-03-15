@@ -177,7 +177,7 @@ export default function StripePaymentForm() {
       <Button
         onClick={createPaymentIntent}
         disabled={!selectedAmount || selectedAmount < 1 || isCreatingIntent || !!customAmountError}
-        className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-6 text-lg rounded-xl shadow-lg"
+        className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-6 text-lg rounded-xl shadow-lg"
       >
         {isCreatingIntent ? (
           <>

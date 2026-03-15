@@ -14,8 +14,6 @@ export default function Mission() {
       {/* Subtle dot grid */}
       <div className="absolute inset-0 pointer-events-none"
         style={{ backgroundImage: 'radial-gradient(circle, #bfdbfe 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.4 }} />
-      {/* Top accent line — full blue spectrum */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-blue-500 to-blue-900" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-3xl mb-20">

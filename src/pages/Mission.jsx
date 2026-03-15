@@ -76,7 +76,7 @@ export default function Mission() {
     <div className="min-h-screen bg-white">
 
       {/* ── HERO ── */}
-      <section className="relative pt-16 pb-24 px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 wave-divider">
+      <section className="relative pt-16 pb-24 px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 wave-divider">
         {/* Decorative grid pattern */}
         <div className="absolute inset-0 opacity-[0.07]" style={{
           backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',

@@ -71,7 +71,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-8 h-8 rounded-lg bg-gray-800 hover:bg-pink-600 flex items-center justify-center transition-colors duration-200"
+                className="w-8 h-8 rounded-lg bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-colors duration-200"
               >
                 <Instagram className="w-4 h-4" />
               </a>

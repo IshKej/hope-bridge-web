@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import CountUp from '../CountUp';
 
 const goals = [
-  { target: "500+", label: "Teens supported by 2025", shade: "from-blue-300 to-blue-400" },
+  { target: "5000+", label: "Teens supported by 2027", shade: "from-blue-300 to-blue-400" },
   { target: "25", label: "School partnerships", shade: "from-blue-200 to-blue-300" },
   { target: "100%", label: "Free programs, always", shade: "from-white to-blue-100" },
 ];

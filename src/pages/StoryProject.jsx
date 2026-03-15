@@ -175,7 +175,7 @@ export default function StoryProject() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50/30 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100/30 relative overflow-hidden">
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none z-0 opacity-70"

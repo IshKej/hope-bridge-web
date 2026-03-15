@@ -141,7 +141,7 @@ const audienceContent = {
     ],
     cta: 'Contact Us for Parent Resources',
     ctaLink: 'Contact',
-    color: 'indigo',
+    color: 'blue',
   },
   "I'm an Educator": {
     heading: "Teachers and counselors can be the bridge.",
@@ -165,7 +165,7 @@ export default function GetSupport() {
 
   const colorMap = {
     blue: { bg: 'bg-blue-50', border: 'border-blue-200', badge: 'bg-blue-100 text-blue-700', btn: 'bg-blue-600 hover:bg-blue-700', check: 'text-blue-500' },
-    indigo: { bg: 'bg-blue-50', border: 'border-blue-200', badge: 'bg-blue-100 text-blue-700', btn: 'bg-blue-600 hover:bg-blue-700', check: 'text-blue-500' },
+    blue2: { bg: 'bg-blue-50', border: 'border-blue-200', badge: 'bg-blue-100 text-blue-700', btn: 'bg-blue-600 hover:bg-blue-700', check: 'text-blue-500' },
     sky: { bg: 'bg-blue-50', border: 'border-blue-200', badge: 'bg-blue-100 text-blue-700', btn: 'bg-blue-600 hover:bg-blue-700', check: 'text-blue-500' },
   };
   const c = colorMap[content.color];
@@ -174,7 +174,7 @@ export default function GetSupport() {
     <div className="min-h-screen bg-white relative overflow-hidden">
 
       {/* ── HERO ── */}
-      <section className="py-16 px-6 lg:px-8 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 relative overflow-hidden">
+      <section className="py-16 px-6 lg:px-8 bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.07]" style={{
           backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
           backgroundSize: '28px 28px'

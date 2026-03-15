@@ -66,7 +66,7 @@ export default function Hero() {
       {/* Animated gradient blobs */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="hero-blob absolute -top-20 -left-20 w-[500px] h-[500px] bg-blue-200/30 rounded-full blur-3xl" style={{ animation: 'hero-drift1 22s ease-in-out infinite' }} />
-        <div className="hero-blob absolute top-1/3 -right-20 w-[420px] h-[420px] bg-indigo-200/25 rounded-full blur-3xl" style={{ animation: 'hero-drift2 28s ease-in-out infinite' }} />
+        <div className="hero-blob absolute top-1/3 -right-20 w-[420px] h-[420px] bg-blue-300/20 rounded-full blur-3xl" style={{ animation: 'hero-drift2 28s ease-in-out infinite' }} />
         <div className="hero-blob absolute -bottom-20 left-1/4 w-[480px] h-[480px] bg-blue-100/35 rounded-full blur-3xl" style={{ animation: 'hero-drift3 25s ease-in-out infinite' }} />
         <div className="hero-blob absolute top-10 right-1/3 w-[300px] h-[300px] bg-slate-200/25 rounded-full blur-3xl" style={{ animation: 'hero-drift4 30s ease-in-out infinite' }} />
 
