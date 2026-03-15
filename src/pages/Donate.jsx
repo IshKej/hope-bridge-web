@@ -40,7 +40,7 @@ export default function DonatePage() {
     <div className="min-h-screen bg-white">
 
       {/* ── HERO ── */}
-      <section className="pt-20 pb-24 px-6 lg:px-8 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700">
+      <section className="pt-20 pb-24 px-6 lg:px-8 bg-gradient-to-br from-blue-800 via-blue-700 to-blue-500">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: 'easeOut' }}>
             <p className="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-4">Make an Impact</p>
@@ -175,7 +175,7 @@ export default function DonatePage() {
       </section>
 
       {/* ── FOOTER CTA ── */}
-      <section className="py-14 px-6 lg:px-8 bg-blue-600">
+      <section className="py-14 px-6 lg:px-8 bg-gradient-to-br from-blue-600 to-blue-700">
         <div className="max-w-xl mx-auto text-center">
           <h3 className="text-2xl font-bold text-white mb-3">Questions About Donating?</h3>
           <p className="text-blue-200 mb-6">We're here to help. Reach out to learn more about how your contribution will be used.</p>

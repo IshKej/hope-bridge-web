@@ -3,56 +3,40 @@ import { motion } from 'framer-motion';
 import CountUp from '../CountUp';
 
 const goals = [
-  { target: "500+", label: "Teens supported by 2025" },
-  { target: "25", label: "School partnerships" },
-  { target: "100%", label: "Free programs" }
+  { target: "500+", label: "Teens supported by 2025", shade: "from-blue-300 to-blue-400" },
+  { target: "25", label: "School partnerships", shade: "from-blue-200 to-blue-300" },
+  { target: "100%", label: "Free programs, always", shade: "from-white to-blue-100" },
 ];
 
 export default function Impact() {
   return (
-    <section id="impact" className="py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-blue-900 to-blue-800 text-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <span className="text-blue-300 font-medium text-sm tracking-wide uppercase">
+    <section id="impact" className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900">
+      {/* Geometric accent */}
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 via-blue-500 to-blue-700" />
+      <div className="absolute inset-0 pointer-events-none"
+        style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mb-16">
+          <span className="inline-block px-3 py-1 rounded-full bg-blue-500/30 text-blue-200 font-bold text-xs tracking-widest uppercase mb-4 border border-blue-400/30">
             Our Impact
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold text-white leading-tight">
-            Real stories, real change
+          <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight">
+            Real goals,{' '}
+            <span className="bg-gradient-to-r from-blue-200 to-blue-100 bg-clip-text text-transparent">real change</span>
           </h2>
         </motion.div>
 
-        {/* Goals */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative"
-        >
-          <div className="border-t border-white/20 pt-12 grid sm:grid-cols-3 gap-12">
-            {goals.map((goal, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                className="text-center"
-              >
-                <CountUp value={goal.target} className="text-5xl lg:text-6xl font-bold text-white mb-3 block" />
-                <p className="text-blue-200 text-sm font-medium uppercase tracking-wide">
-                  {goal.label}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        <div className="grid sm:grid-cols-3 gap-0 border border-blue-600/40 rounded-2xl overflow-hidden">
+          {goals.map((goal, index) => (
+            <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: index * 0.1 }}
+              className={`p-10 text-center ${index < 2 ? 'border-r border-blue-600/40' : ''} bg-blue-700/20 hover:bg-blue-600/30 transition-colors duration-300`}>
+              <div className={`h-1 w-12 mx-auto mb-6 rounded-full bg-gradient-to-r ${goal.shade}`} />
+              <CountUp value={goal.target} className={`text-5xl lg:text-6xl font-black bg-gradient-to-r ${goal.shade} bg-clip-text text-transparent block mb-3`} />
+              <p className="text-blue-200 text-sm font-semibold uppercase tracking-widest">{goal.label}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

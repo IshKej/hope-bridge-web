@@ -84,7 +84,7 @@ export default function Partnerships() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="pt-20 pb-20 px-6 lg:px-8 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700">
+      <section className="pt-20 pb-20 px-6 lg:px-8 bg-gradient-to-br from-blue-800 via-blue-700 to-blue-500">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 24 }}

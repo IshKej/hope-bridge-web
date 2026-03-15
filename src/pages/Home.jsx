@@ -6,16 +6,21 @@ import CommunitySurvey from '@/components/home/CommunitySurvey';
 import Impact from '@/components/home/Impact';
 import Contact from '@/components/home/Contact';
 import StorySection from '@/components/home/StorySection.jsx';
-import BackgroundElements from '@/components/BackgroundElements';
+import Programs from '@/components/home/Programs';
+import Partnerships from '@/components/home/Partnerships';
+import GetInvolved from '@/components/home/GetInvolved';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-blue-50 to-white relative overflow-hidden">
-      <BackgroundElements />
+    <div className="min-h-screen">
       <Hero />
       <Mission />
       <Problem />
+      <Programs />
       <StorySection />
+      <Impact />
+      <GetInvolved />
+      <Partnerships />
       <CommunitySurvey />
       <Contact />
     </div>

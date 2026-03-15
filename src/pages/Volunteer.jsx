@@ -76,7 +76,7 @@ export default function Volunteer() {
     <div className="min-h-screen bg-white">
 
       {/* Hero */}
-      <section className="pt-20 pb-20 px-6 lg:px-8 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700">
+      <section className="pt-20 pb-20 px-6 lg:px-8 bg-gradient-to-br from-blue-800 via-blue-700 to-blue-500">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }}>
             <p className="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-4">Join the Team</p>

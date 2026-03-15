@@ -236,30 +236,43 @@ export default function Layout({ children, currentPageName }) {
         :root {
           --color-primary: #1E3A5F;
           --color-primary-light: #3B82F6;
-          --color-surface: #f5f8ff;
-          --color-text: #334155;
-          --color-text-light: #64748B;
+          --blue-pastel: #dbeafe;
+          --blue-light: #93c5fd;
+          --blue-mid: #3b82f6;
+          --blue-deep: #1d4ed8;
+          --blue-dark: #1e3a8a;
+          --color-surface: #f0f6ff;
+          --color-text: #1e3a8a;
+          --color-text-body: #334155;
         }
 
         html { scroll-behavior: smooth; }
 
         body {
-          background-color: #f5f8ff;
+          background-color: #f0f6ff;
           background-image:
-            radial-gradient(ellipse 80% 40% at 10% 0%, rgba(59,130,246,0.08) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 40% at 90% 100%, rgba(37,99,235,0.06) 0%, transparent 60%);
+            radial-gradient(ellipse 70% 50% at 0% 0%, rgba(147,197,253,0.18) 0%, transparent 55%),
+            radial-gradient(ellipse 60% 40% at 100% 30%, rgba(59,130,246,0.10) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 40% at 50% 100%, rgba(29,78,216,0.07) 0%, transparent 55%);
           background-attachment: fixed;
-          color: var(--color-text);
+          color: var(--color-text-body);
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
           overflow-x: hidden;
         }
 
-        /* ── Section atmosphere ── */
+        /* ── Pastel section atmosphere ── */
         .bg-blue-50 {
-          background-image: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(59,130,246,0.06) 0%, transparent 70%);
+          background-image:
+            radial-gradient(ellipse 80% 60% at 20% 0%, rgba(147,197,253,0.15) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 50% at 80% 100%, rgba(59,130,246,0.08) 0%, transparent 60%);
         }
         .bg-white {
-          background-image: radial-gradient(ellipse 50% 50% at 50% 100%, rgba(59,130,246,0.04) 0%, transparent 70%);
+          background-image:
+            radial-gradient(ellipse 60% 50% at 80% 0%, rgba(191,219,254,0.20) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 40% at 20% 100%, rgba(59,130,246,0.06) 0%, transparent 55%);
+        }
+        .bg-blue-100 {
+          background-image: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(59,130,246,0.10) 0%, transparent 70%);
         }
 
         * {

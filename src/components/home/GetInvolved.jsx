@@ -6,77 +6,43 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '../../utils';
 
 const pathways = [
-  {
-    title: "Students",
-    description: "Explore our programs, attend a workshop, or simply reach out when you need someone who understands.",
-    cta: "Find Support",
-    page: "GetSupport"
-  },
-  {
-    title: "Parents & Families",
-    description: "Access resources designed to help you understand and support your teen's mental health journey.",
-    cta: "Learn More",
-    page: "GetSupport"
-  },
-  {
-    title: "Schools & Organizations",
-    description: "Partner with us to bring mental health awareness and support programs to your students.",
-    cta: "Partner With Us",
-    page: "Partnerships"
-  },
-  {
-    title: "Supporters & Donors",
-    description: "Your contribution helps us keep all programs free and accessible to every teen who needs them.",
-    cta: "Support Our Work",
-    page: "Donate"
-  }
+  { title: "Students", description: "Explore programs, attend a workshop, or reach out when you need someone who understands.", cta: "Find Support", page: "GetSupport", shade: "from-blue-300 to-blue-400", bg: "bg-blue-50" },
+  { title: "Parents & Families", description: "Access resources designed to help you understand and support your teen's mental health journey.", cta: "Learn More", page: "GetSupport", shade: "from-blue-400 to-blue-500", bg: "bg-blue-100" },
+  { title: "Schools & Organizations", description: "Partner with us to bring mental health awareness and support programs directly to your students.", cta: "Partner With Us", page: "Partnerships", shade: "from-blue-500 to-blue-600", bg: "bg-blue-100" },
+  { title: "Supporters & Donors", description: "Your contribution keeps all programs free and accessible to every teen who needs them.", cta: "Support Our Work", page: "Donate", shade: "from-blue-600 to-blue-700", bg: "bg-blue-100" },
 ];
 
 export default function GetInvolved() {
-
   return (
-    <section id="get-involved" className="py-24 lg:py-32 bg-blue-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <span className="text-blue-600 font-medium text-sm tracking-wide uppercase">
+    <section id="get-involved" className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-blue-600 to-blue-900" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mb-16">
+          <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-bold text-xs tracking-widest uppercase mb-4">
             Get Involved
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 leading-tight">
-            There's a place for you here
+          <h2 className="text-4xl sm:text-5xl font-black text-blue-900 leading-tight">
+            There's a place{' '}
+            <span className="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">for you here</span>
           </h2>
-          <p className="mt-6 text-lg text-slate-600">
-            Whether you're a teen seeking support, a parent wanting to help, or 
-            an organization ready to make a difference, you belong in this community.
-          </p>
         </motion.div>
 
-        <div className="divide-y divide-gray-200">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-blue-200 rounded-2xl overflow-hidden">
           {pathways.map((pathway, index) => (
-            <motion.div
-              key={pathway.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="py-7 grid md:grid-cols-4 gap-4 items-center"
-            >
-              <span className="text-xs font-semibold text-blue-600 tracking-widest uppercase">0{index + 1}</span>
-              <h3 className="text-lg font-semibold text-slate-900">
-                {pathway.title}
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                {pathway.description}
-              </p>
-              <div className="md:text-right">
+            <motion.div key={pathway.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.08 }}
+              className={`p-7 ${index < 3 ? 'border-r border-blue-200' : ''} bg-white hover:bg-blue-50 transition-colors duration-200 group flex flex-col`}>
+              {/* Color accent bar */}
+              <div className={`h-1 w-10 rounded-full bg-gradient-to-r ${pathway.shade} mb-5 group-hover:w-16 transition-all duration-300`} />
+              <span className={`text-xs font-black tracking-widest uppercase bg-gradient-to-r ${pathway.shade} bg-clip-text text-transparent block mb-3`}>
+                0{index + 1}
+              </span>
+              <h3 className="text-lg font-bold text-blue-900 mb-3 leading-snug">{pathway.title}</h3>
+              <p className="text-blue-600 text-sm leading-relaxed flex-1">{pathway.description}</p>
+              <div className="mt-5">
                 <Link to={createPageUrl(pathway.page)}>
-                  <Button variant="ghost" className="text-blue-700 hover:text-blue-900 hover:bg-blue-50 transition-colors px-0 md:px-4">
-                    {pathway.cta} <ArrowRight className="w-4 h-4 ml-1.5" />
+                  <Button variant="ghost" className="text-blue-700 hover:text-blue-900 hover:bg-blue-100 transition-colors px-0 font-semibold text-sm">
+                    {pathway.cta} <ArrowRight className="w-3.5 h-3.5 ml-1" />
                   </Button>
                 </Link>
               </div>
