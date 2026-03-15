@@ -160,7 +160,7 @@ function TeamMemberCard({ member, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.07 }}
-      className="group bg-blue-900 rounded-lg p-6 text-center border border-blue-700 hover:border-blue-400 transition-all duration-300 hover:shadow-xl flex flex-col items-center"
+      className="group pt-8 pb-6 text-center border-t border-blue-800 flex flex-col items-center transition-all duration-300"
     >
       {showImage ? (
         <img

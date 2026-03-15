@@ -181,7 +181,7 @@ export default function Mission() {
                 {/* Gradient top accent */}
                 <div className={`absolute top-0 left-6 right-6 h-1 rounded-b-full bg-gradient-to-r ${goal.color} opacity-60 group-hover:opacity-100 transition-opacity`} />
 
-                <div className="bg-white rounded-lg p-8 border border-blue-100 hover:border-blue-300 transition-all duration-300 h-full">
+                <div className="pt-8 border-t border-blue-200">
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">
                     {goal.title}
                   </h3>

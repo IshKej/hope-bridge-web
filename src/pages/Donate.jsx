@@ -119,7 +119,7 @@ export default function DonatePage() {
             </div>
 
             {/* Right: Allocation chart */}
-            <div className="border border-blue-200 rounded-lg p-8 bg-white">
+            <div className="pt-8 border-t border-blue-200">
               <h3 className="text-xl font-bold text-gray-900 mb-6">Where Your Money Goes</h3>
               <div className="space-y-5">
                 {allocation.map(({ label, pct, desc }) => (
@@ -164,7 +164,6 @@ export default function DonatePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="bg-white rounded-lg p-8 border border-blue-200"
           >
             <StripePaymentForm />
           </motion.div>

@@ -237,7 +237,7 @@ export default function Layout({ children, currentPageName }) {
         :root {
           --color-primary: #1E3A5F;
           --color-primary-light: #3B82F6;
-          --color-surface: #F8FAFC;
+          --color-surface: #f5f8ff;
           --color-text: #334155;
           --color-text-light: #64748B;
         }
@@ -245,10 +245,22 @@ export default function Layout({ children, currentPageName }) {
         html { scroll-behavior: smooth; }
 
         body {
-          background-color: var(--color-surface);
+          background-color: #f5f8ff;
+          background-image:
+            radial-gradient(ellipse 80% 40% at 10% 0%, rgba(59,130,246,0.08) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 40% at 90% 100%, rgba(37,99,235,0.06) 0%, transparent 60%);
+          background-attachment: fixed;
           color: var(--color-text);
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
           overflow-x: hidden;
+        }
+
+        /* ── Section atmosphere ── */
+        .bg-blue-50 {
+          background-image: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(59,130,246,0.06) 0%, transparent 70%);
+        }
+        .bg-white {
+          background-image: radial-gradient(ellipse 50% 50% at 50% 100%, rgba(59,130,246,0.04) 0%, transparent 70%);
         }
 
         * {

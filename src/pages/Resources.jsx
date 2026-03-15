@@ -90,24 +90,26 @@ export default function Resources() {
                   If you are in immediate danger, call 911. These resources are here when you need to talk.
                 </p>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5">
+              <div className="divide-y divide-blue-200">
                 {crisisResources.map((r, i) => (
                   <motion.div
                     key={r.name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.07 }}
-                    className="relative rounded-lg p-6 border bg-white border-blue-200 hover:shadow-lg hover:border-blue-400 transition-all duration-300"
+                    className="py-6 flex flex-col sm:flex-row sm:items-start gap-4"
                   >
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-blue-100 text-blue-700">{r.tag}</span>
-                    </div>
-                    <h3 className="font-black text-gray-900 mb-2">{r.name}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{r.description}</p>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <h3 className="font-black text-gray-900">{r.name}</h3>
+                        <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 flex-shrink-0">{r.tag}</span>
+                      </div>
+                      <p className="text-gray-700 text-sm leading-relaxed mb-3">{r.description}</p>
                     <a href={r.href} className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800">
                       {r.action}
                       <ArrowRight className="w-4 h-4" />
                     </a>
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -120,20 +122,20 @@ export default function Resources() {
               <p className="text-gray-700 mb-8 text-lg">
                 Organizations and resources created specifically for the Asian American and Pacific Islander community.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5">
+              <div className="divide-y divide-blue-200">
                 {aapiResources.map((r, i) => (
                   <motion.div
                     key={r.name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.07 }}
-                    className="rounded-lg p-6 bg-white border border-blue-200 hover:shadow-lg hover:border-blue-400 transition-all duration-300"
+                    className="py-6"
                   >
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="font-black text-gray-900 leading-snug pr-3">{r.name}</h3>
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="font-black text-gray-900 leading-snug">{r.name}</h3>
                       <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 flex-shrink-0">{r.tag}</span>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{r.description}</p>
+                    <p className="text-gray-700 text-sm leading-relaxed mb-3">{r.description}</p>
                     <a href={r.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-800">
                       Visit Site <ExternalLink className="w-3.5 h-3.5" />
                     </a>
@@ -149,20 +151,20 @@ export default function Resources() {
               <p className="text-gray-700 mb-8 text-lg">
                 Free online tools, apps, and platforms for mental health support, available whenever you need them.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5">
+              <div className="divide-y divide-blue-200">
                 {onlineResources.map((r, i) => (
                   <motion.div
                     key={r.name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.07 }}
-                    className="rounded-lg p-6 bg-white border border-blue-200 hover:shadow-lg hover:border-blue-400 transition-all duration-300"
+                    className="py-6"
                   >
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="font-black text-gray-900 leading-snug pr-3">{r.name}</h3>
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="font-black text-gray-900 leading-snug">{r.name}</h3>
                       <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 flex-shrink-0">{r.tag}</span>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{r.description}</p>
+                    <p className="text-gray-700 text-sm leading-relaxed mb-3">{r.description}</p>
                     <a href={r.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-800">
                       Visit Site <ExternalLink className="w-3.5 h-3.5" />
                     </a>

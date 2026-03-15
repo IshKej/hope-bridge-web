@@ -170,7 +170,6 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-lg p-10 border border-blue-200"
           >
             {submitError && (
               <div className="flex items-start gap-3 p-4 bg-red-50 border border-red-200 rounded-xl mb-6">

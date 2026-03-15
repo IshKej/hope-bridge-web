@@ -169,7 +169,7 @@ export default function Partnerships() {
                 method="POST"
                 onSubmit={handleSubmit}
                 noValidate
-                className="bg-white rounded-lg border border-blue-200 p-8 space-y-6"
+                className="space-y-6 max-w-3xl mx-auto"
               >
                 <input type="hidden" name="_subject" value={`Partnership Inquiry, ${formData.orgName || 'HopeBridge'}`} />
                 {/* Contact Info */}

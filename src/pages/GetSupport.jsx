@@ -317,13 +317,13 @@ export default function GetSupport() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 flex flex-col"
+                className="group py-6 border-t border-blue-100 flex flex-col"
               >
                 <h3 className="font-bold text-gray-900 text-sm leading-snug mb-2 group-hover:text-blue-700 transition-colors">{res.name}</h3>
                 <p className="text-xs text-gray-500 leading-relaxed mb-4 flex-1">{res.description}</p>
                 <div className="flex flex-wrap gap-1">
                   {res.tags.map((tag) => (
-                    <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-500 font-medium">{tag}</span>
+                    <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 font-medium">{tag}</span>
                   ))}
                 </div>
                 <div className="flex items-center gap-1 text-xs text-blue-600 mt-3 font-semibold">
@@ -363,7 +363,7 @@ export default function GetSupport() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group bg-white rounded-2xl p-5 border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all duration-300"
+                className="group py-5 border-t border-blue-100"
               >
                 <div>
                   <div className="flex items-center gap-2 mb-1">

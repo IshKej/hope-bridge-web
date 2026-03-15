@@ -105,15 +105,12 @@ export default function Volunteer() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
                   onClick={() => { setFormData(prev => ({ ...prev, role: r.label })); setErrors(prev => { const e = {...prev}; delete e.role; return e; }); }}
-                  className={`relative rounded-lg border-2 cursor-pointer transition-all duration-300 overflow-hidden ${
-                    selected
-                      ? `${r.ring} shadow-md`
-                      : 'border-blue-100 bg-white/70 hover:border-blue-300 hover:shadow-sm'
+                  className={`relative cursor-pointer transition-all duration-300 border-t-2 pt-5 pb-4 ${
+                    selected ? 'border-blue-500' : 'border-blue-200 hover:border-blue-400'
                   }`}
                 >
-                  {/* Gradient top bar */}
-                  <div className={`h-1 bg-gradient-to-r ${r.accent}`} />
-                  <div className={`p-5 ${selected ? r.bg : 'bg-white/70'} backdrop-blur-sm`}>
+
+                  <div>
                     <div className="flex items-start gap-4">
                       <div>
                         <h3 className={`font-bold text-sm mb-1 ${selected ? 'text-gray-900' : 'text-gray-800'}`}>{r.label}</h3>
@@ -144,7 +141,7 @@ export default function Volunteer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
             onSubmit={handleSubmit}
-            className="bg-white rounded-lg p-8 border border-blue-200 space-y-5"
+            className="space-y-5"
           >
             <div className="flex items-center gap-3 mb-2">
               <h2 className="text-xl font-bold text-gray-900">Your Information</h2>

@@ -166,8 +166,7 @@ export default function GetInvolved() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="bg-white rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col"
               >
-                <div className={`h-2 bg-gradient-to-r ${role.gradient}`} />
-                <div className="p-6 flex flex-col flex-1">
+<div className="p-6 flex flex-col flex-1">
                   <div className="flex items-start justify-between mb-3">
                     <h3 className="font-bold text-gray-900 text-base">{role.title}</h3>
                     <span className="text-xs px-2.5 py-1 rounded-full bg-blue-50 text-blue-600 font-medium whitespace-nowrap ml-2 flex-shrink-0">
@@ -268,7 +267,7 @@ export default function GetInvolved() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all duration-300 p-5 flex items-start gap-4"
+                className="py-5 border-t border-blue-200 flex items-start gap-4"
               >
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">{msg.platform}</p>
